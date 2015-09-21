@@ -1,14 +1,53 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Robert Rouhani
+email: robert.rouhani@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The homepage of Robert Rouhani
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://robmaister.com" # the base hostname & protocol for your site
-twitter_username: robmaister
-github_username:  robmaister
 
 # Build settings
 markdown: kramdown
+permalink: pretty
+
+social-media-links:
+  - site: Github
+    icon: fa-github
+    url: https://github.com/Robmaister
+  - site: Stack Overflow
+    icon: fa-stack-overflow
+    url: http://stackoverflow.com/users/1122135/robert-rouhani
+  - site: Facebook
+    icon: fa-facebook
+    url: https://www.facebook.com/robert.rouhani
+  - site: Twitter
+    icon: fa-twitter
+    url: https://twitter.com/robmaister
+    
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      nav:
+        - text: Blog
+          icon: fa-pencil
+          url:  /blog/
+        - text: Software
+          icon: fa-code
+          url:  /software/
+        - text: Hardware
+          icon: fa-cogs
+          url:  /hardware/
+        - text: Level Design
+          icon: fa-map-o
+          url:  /level-design/
+        - text: Photography
+          icon: fa-camera
+          url:  /photography/
+        - text: Graphic Design
+          icon: fa-picture-o
+          url:  /graphic-design/
+        - text: Event Planning
+          icon: fa-calendar
+          url:  /event-planning/

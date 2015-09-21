@@ -79,14 +79,12 @@ body {
     z-index: 100;
     overflow: hidden;
     background: #eee;
+    opacity: 0.8;
     
-    -webkit-transition: width 0.5s ease-in-out;
-       -moz-transition: width 0.5s ease-in-out;
-         -o-transition: width 0.5s ease-in-out;
-            transition: width 0.5s ease-in-out;
-}
-
-header {
+    -webkit-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+         -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
 }
 
 nav {
@@ -110,9 +108,11 @@ nav {
 
 .nav-title {
     display: none;
-    
-    text-align: center;
     color: #444;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    text-decoration: none;
     margin-top: 1em;
     margin-bottom: 1em;
     white-space: nowrap;
@@ -166,9 +166,9 @@ footer {
     color: #444;
 }
 
-.main-container {
+#main-container {
     margin-left: 3em;
-    opacity: 0.85;
+    opacity: 0.8;
     
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -176,10 +176,20 @@ footer {
             transition: all 0.5s ease-in-out;
 }
 
-.main {
-    display: inline-block;
-    background-color: #fff;
+#main-content {
+    display: block;
+    background-color: #fafafa;
+    color: #444;
     padding: 1em;
+    
+    -webkit-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+         -o-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+}
+
+#main-title {
+    text-align: center;
 }
 
 .social-media-link {
@@ -200,14 +210,20 @@ footer {
    Javascript-controlled states
    ========================================================================== */
    
+#main-content.loading {
+    opacity: 0;
+}
+   
 @media only screen and (max-width: 767px) {
     .header-container.expanded {
         width: 18em;
+        opacity: 1.0;
     }
 
     .header-container.expanded .nav-title {
-        display: block;
+        display: inline-block;
         font-size: 1.8em;
+        vertical-align: text-top;
     }
 
     .header-container.expanded nav ul li {
@@ -260,7 +276,6 @@ footer {
    
     .header-container {
         width: 18em;
-        opacity: 0.9;
     }
    
     #nav-toggle {
@@ -279,7 +294,7 @@ footer {
         width: 18em;
     }
  
-    .main-container {
+    #main-container {
         margin-left: 18em;
     }
     
@@ -302,7 +317,7 @@ footer {
     Maximal Width
    =============== */
 
-    .main {
+    #main-content {
         margin: 3em 3em;
         max-width: 60em;
     }
