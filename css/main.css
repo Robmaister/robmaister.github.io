@@ -20,7 +20,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #aaa;
     margin: 1em 0;
     padding: 0;
 }
@@ -64,10 +64,20 @@ body {
     background-attachment: fixed;
     background-position: 50% 50%;
 
-    -webkit-transition: background-image 1.5s ease-in-out;
-       -moz-transition: background-image 1.5s ease-in-out;
-         -o-transition: background-image 1.5s ease-in-out;
-            transition: background-image 1.5s ease-in-out;
+    -webkit-transition: background 0.5s ease-in-out;
+       -moz-transition: background 0.5s ease-in-out;
+         -o-transition: background 0.5s ease-in-out;
+            transition: background 0.5s ease-in-out;
+}
+
+/*body.loading {
+    background-size: 0;
+    background-image: 0 !important;
+}*/
+
+#bg-storage {
+    display: none;
+    visibility: hidden;
 }
 
 .header-container {
@@ -87,9 +97,6 @@ body {
             transition: all 0.5s ease-in-out;
 }
 
-nav {
-    background: #ddd;
-}
 
 .header-line {
     white-space: nowrap;
@@ -122,6 +129,7 @@ nav {
 nav ul {
     margin: 0;
     padding: 0;
+    
 }
 
 nav ul li {
@@ -132,16 +140,37 @@ nav ul li {
     padding: 0;
     overflow: hidden;
     white-space: nowrap;
+    
+    background: #ddd;
 
     color: #444;
 
     border-bottom: 1px solid #aaa;
+    
+    cursor: pointer;
+    
+    -webkit-transition: opacity 0.5s ease-in-out;
+       -moz-transition: opacity 0.5s ease-in-out;
+         -o-transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.5s ease-in-out;
 }
 
-nav ul li:last-child, nav ul li.nav-selected {
+/* ew gross */
+nav ul li:nth-child(1)  { transition-delay: 0.00s }
+nav ul li:nth-child(2)  { transition-delay: 0.05s }
+nav ul li:nth-child(3)  { transition-delay: 0.10s }
+nav ul li:nth-child(4)  { transition-delay: 0.15s }
+nav ul li:nth-child(5)  { transition-delay: 0.20s }
+nav ul li:nth-child(6)  { transition-delay: 0.25s }
+nav ul li:nth-child(7)  { transition-delay: 0.30s }
+nav ul li:nth-child(8)  { transition-delay: 0.35s }
+nav ul li:nth-child(9)  { transition-delay: 0.40s }
+nav ul li:nth-child(10) { transition-delay: 0.45s }
+nav ul li:nth-child(11) { transition-delay: 0.50s }
+
+nav ul li:last-child {
     border-bottom: none;
 }
-
 
 nav ul li a {
     padding-left: 0.6em;
@@ -168,7 +197,6 @@ footer {
 
 #main-container {
     margin-left: 3em;
-    opacity: 0.8;
     
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -176,11 +204,13 @@ footer {
             transition: all 0.5s ease-in-out;
 }
 
-#main-content {
+#main {
     display: block;
     background-color: #fafafa;
+    background-color: rgba(250, 250, 250, 0.8);
     color: #444;
     padding: 1em;
+    overflow: hidden;
     
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -190,6 +220,37 @@ footer {
 
 #main-title {
     text-align: center;
+    font-size: 2.5em;
+}
+
+#main-md {
+    opacity: 1;
+}
+
+#main-md img {
+    width: 100%;
+}
+
+#main-md h1 {
+    margin: 0 0 1em 0;
+}
+
+.md.button {
+    padding: 1em;
+    margin-right: 0.5em;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block;
+    
+    border-radius: 0.5em;
+    
+    background: #444;
+    color: #fafafa;
+}
+
+.md.button:hover {
+    background: #666;
+    color: #ddd;
 }
 
 .social-media-link {
@@ -210,8 +271,15 @@ footer {
    Javascript-controlled states
    ========================================================================== */
    
-#main-content.loading {
+#main.loading {
     opacity: 0;
+}
+
+nav.loading ul li {
+    /*-webkit-transform: translate(-18em,0px);
+        -ms-transform: translate(-18em,0px);
+            transform: translate(-18em,0px);*/
+            opacity: 0;
 }
    
 @media only screen and (max-width: 767px) {
@@ -317,7 +385,7 @@ footer {
     Maximal Width
    =============== */
 
-    #main-content {
+    #main {
         margin: 3em 3em;
         max-width: 60em;
     }

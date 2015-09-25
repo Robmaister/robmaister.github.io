@@ -29,6 +29,7 @@ defaults:
     scope:
       path: ""
     values:
+      bg: bg3456.jpg
       nav:
         - text: Blog
           icon: fa-pencil

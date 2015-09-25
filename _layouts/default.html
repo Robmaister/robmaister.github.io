@@ -5,15 +5,18 @@
 {% include head.html %}
 </head>
 
-<body>
+<body style="background-image: url({{ site.baseurl }}/img/{{ page.bg }})">
 <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+
+<!-- HACK jQuery can't load <body> from $.get(), this seems cleaner than regex-ing HTML -->
+<div id="bg-storage" style="background-image: url({{ site.baseurl }}/img/{{ page.bg }})"></div>
         
 {% include sidebar.html %}
 
-<div class="main-container" id="main-container">
-    <div class="main wrapper clearfix" id="main-content">
+<div id="main-container">
+    <div id="main" class="wrapper clearfix">
         {{ content }}
     </div>
 </div>
