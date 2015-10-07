@@ -1,18 +1,3 @@
-/*var background_images = [
-	'ZyzTf6b.jpg',
-	'2010-11-26_13.40.30.png',
-	'DIV7gaC.png',
-	'jp_diner_port0037.jpg',
-	'TopHat-2013-07-04-00.03.45.0008.png'
-];
-
-var background_index = 0;
-
-function transition_background() {
-	$('body').css("background-image", "url(/img/" + background_images[background_index] + ")");
-	background_index++;
-	background_index = background_index % background_images.length;
-}*/
 
 function intercept_nav_links() {
     $(".nav-item").click(function(e) {
@@ -29,16 +14,48 @@ function intercept_title_link() {
 }
 
 function nav_equals(old_nav, new_nav) {
-    return old_nav.html().replace(/\s+/g, '') === new_nav.html().replace(/\s+/g, '');
+    
+    var old_links = [];
+    var new_links = [];
+    
+    old_nav.find("li a").each(function() {
+        old_links.push(this.href);
+    });
+    
+    new_nav.find("li a").each(function() {
+        new_links.push(this.href);
+    });
+    
+    if (old_links.length != new_links.length)
+        return false;
+
+    for (var i = 0; i < old_links.length; i++) {
+        if (old_links[i] !== new_links[i]) {
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+function clear_selected_links() {
+    $(".nav-item.selected").each(function() {
+        $(this).removeClass("selected");
+    });
+}
+
+function select_active_link(active_url) {
+    $(".nav-item a").each(function() {
+        if (active_url === this.href) {
+            $(this).closest("li").addClass("selected");
+        }
+    });
 }
 
 $(document).ready(function () {
 
-    //HACK swap backgrounds to test
-	/*transition_background();
-	setInterval(function() {
-		transition_background();
-	}, 10000);*/
+    //select active link
+    select_active_link(window.location.href);
 
     //Collapse sidebar if click on anything else while expanded
     $(document).click(function(e) {
@@ -80,8 +97,12 @@ $(document).ready(function () {
             if (swap_nav) 
                 $("nav").addClass("loading");
 			
-			
             $("body").addClass("loading");
+            
+            if (!swap_nav) {
+                clear_selected_links();
+                select_active_link(state.url);
+            }
             
             //Let the transition finish
             setTimeout(function() {

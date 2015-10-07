@@ -172,6 +172,14 @@ nav ul li:last-child {
     border-bottom: none;
 }
 
+nav ul li:hover {
+    background: #ccc;
+}
+
+nav ul li.selected {
+    background: #bbb;
+}
+
 nav ul li a {
     padding-left: 0.6em;
     font-size: 1.2em;
