@@ -239,6 +239,10 @@ footer {
     width: 100%;
 }
 
+#main-md td {
+    padding: 5px;
+}
+
 #main-md h1 {
     margin: 0 0 1em 0;
 }
