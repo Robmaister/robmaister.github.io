@@ -117,7 +117,7 @@ $(document).ready(function () {
                 }
                 
                 //swap backgrounds
-                var new_bg = $(data).filter("#bg-storage").attr("style");
+                var new_bg = data.match(/body style=\"(.*?)\"/)[1];
                 $("body").attr("style", new_bg);
                 
                 //swap titles

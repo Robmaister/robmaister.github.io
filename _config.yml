@@ -52,3 +52,9 @@ defaults:
         - text: Event Planning
           icon: fa-calendar
           url:  /event-planning/
+  - 
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      category: blog

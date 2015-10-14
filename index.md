@@ -11,6 +11,6 @@ This site is still under development and currently looks best in a modern Webkit
 
 # Quick Links
 
-<a class="md button" href="/RobertRouhaniResume.pdf"><i class="fa fa-file-pdf-o"></i> Resume</a>
-<a class="md button" href="https://iliumvr.com/"><i class="fa fa-briefcase"></i> Ilium VR</a>
-<a class="md button" href="https://github.com/Robmaister/robmaister.github.io"><i class="fa fa-code-fork"></i> Website Source Code</a>
+<a class="button" href="/downloads/RobertRouhaniResume.pdf"><i class="fa fa-file-pdf-o"></i> Resume</a>
+<a class="button" href="https://iliumvr.com/"><i class="fa fa-briefcase"></i> Ilium VR</a>
+<a class="button" href="https://github.com/Robmaister/robmaister.github.io"><i class="fa fa-code-fork"></i> Website Source Code</a>

@@ -20,7 +20,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #999;
     margin: 1em 0;
     padding: 0;
 }
@@ -75,11 +75,6 @@ body {
     background-image: 0 !important;
 }*/
 
-#bg-storage {
-    display: none;
-    visibility: hidden;
-}
-
 .header-container {
     position: fixed;
     top: 0;
@@ -88,8 +83,8 @@ body {
     bottom: 0;
     z-index: 100;
     overflow: hidden;
-    background: #eee;
-    opacity: 0.8;
+    background-color: #eee;
+    background-color: rgba(238, 238, 238, 0.8);
     
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -141,11 +136,12 @@ nav ul li {
     overflow: hidden;
     white-space: nowrap;
     
-    background: #ddd;
+    background-color: #6e6e6e;
+    background-color: rgba(110, 110, 110, 0.2);
 
     color: #444;
 
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     
     cursor: pointer;
     
@@ -173,11 +169,13 @@ nav ul li:last-child {
 }
 
 nav ul li:hover {
-    background: #ccc;
+    background-color: #ccc;
+    background-color: rgba(70, 70, 70, 0.2);
 }
 
 nav ul li.selected {
-    background: #bbb;
+    background-color: #bbb;
+    background-color: rgba(20, 20, 20, 0.2);
 }
 
 nav ul li a {
@@ -214,8 +212,8 @@ footer {
 
 #main {
     display: block;
-    background-color: #fafafa;
-    background-color: rgba(250, 250, 250, 0.8);
+    background-color: #eee;
+    background-color: rgba(238, 238, 238, 0.8);
     color: #444;
     padding: 1em;
     overflow: hidden;
@@ -236,7 +234,18 @@ footer {
 }
 
 #main-md img {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+#main-md img.small {
+    height: 200px;
+}
+
+#main-md img.medium {
+    height: 400px;
 }
 
 #main-md td {
@@ -247,7 +256,20 @@ footer {
     margin: 0 0 1em 0;
 }
 
-.md.button {
+#main-md a {
+    text-decoration: none;
+    color: #0094de;
+}
+
+#main-md a:visited {
+    color: #0094de;
+}
+
+#main-md a:hover {
+    color: #0087ca;
+}
+
+#main-md a.button {
     padding: 1em;
     margin-right: 0.5em;
     text-decoration: none;
@@ -260,7 +282,7 @@ footer {
     color: #fafafa;
 }
 
-.md.button:hover {
+#main-md a.button:hover {
     background: #666;
     color: #ddd;
 }
@@ -297,7 +319,7 @@ nav.loading ul li {
 @media only screen and (max-width: 767px) {
     .header-container.expanded {
         width: 18em;
-        opacity: 1.0;
+        background-color: rgba(238, 238, 238, 1);
     }
 
     .header-container.expanded .nav-title {
