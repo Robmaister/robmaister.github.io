@@ -25,7 +25,7 @@ nav:
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'robmaister';
-    var disqus_identifier = '{{ page.date | date: "%Y-%m-%d" }}-{{ page.title }}';
+    var disqus_identifier = '{{ page.date | date: "%Y-%m-%d" }}-{{ page.title | escape }}';
     
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
