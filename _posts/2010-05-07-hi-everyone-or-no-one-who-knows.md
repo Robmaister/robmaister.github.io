@@ -2,13 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Hi everyone! (or no one, who knows?)
 date: '2010-05-07 00:43:57 -0400'
-date_gmt: '2010-05-07 00:43:57 -0400'
-tags:
-- asus
-- monitor
-- VH242H
+tags: [Updates]
 ---
 
 I thought I might as well make a blog with everything I've been doing

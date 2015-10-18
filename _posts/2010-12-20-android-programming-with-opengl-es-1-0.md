@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Android programming with OpenGL ES 1.0
 date: '2010-12-20 01:41:32 -0500'
-date_gmt: '2010-12-20 09:41:32 -0500'
-tags: []
+tags: [Software]
 ---
 
 ![Android Emulator][1]

@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: It's been a while, have some screenshots!
 date: '2012-05-12 00:03:57 -0400'
-date_gmt: '2012-05-12 07:03:57 -0400'
-tags: []
+tags: [Software]
 ---
 I'm working on a new project with a whole bunch of friends and I just tried
 implementing multitexturing for the terrain. When I first tested it, I had the

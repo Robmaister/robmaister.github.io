@@ -1,11 +1,17 @@
 
+// Intercept all nav links for history.js
 function intercept_nav_links() {
     $(".nav-item").click(function(e) {
         e.preventDefault();
-		History.pushState(null, document.title, $(this).children("a:first").attr('href'));
+		History.pushState(
+            null,
+            document.title,
+            $(this).children("a:first").attr('href')
+        );
 	});
 }
 
+// Intercept the link of the navigation title for history.js
 function intercept_title_link() {
 	$(".nav-title").click(function(e) {
         e.preventDefault();
@@ -13,6 +19,17 @@ function intercept_title_link() {
     });
 }
 
+function intercept_main_links() {
+    $("#main-md a").click(function(e) {
+        if (this.host == location.host) {
+            e.preventDefault();
+            History.pushState(null, document.title, $(this).attr('href'));
+        }
+    });
+}
+
+// Compare two nav bars for "equality" (all the same links)
+// Determines whether or not to swap nav bars when loading with history.js
 function nav_equals(old_nav, new_nav) {
     
     var old_links = [];
@@ -38,12 +55,14 @@ function nav_equals(old_nav, new_nav) {
     return true;
 }
 
+// Makes sure there are no selected nav bar links
 function clear_selected_links() {
     $(".nav-item.selected").each(function() {
         $(this).removeClass("selected");
     });
 }
 
+// Selects a nav bar link (the page currently being viewed)
 function select_active_link(active_url) {
     $(".nav-item a").each(function() {
         if (active_url === this.href) {
@@ -52,10 +71,8 @@ function select_active_link(active_url) {
     });
 }
 
+//On page load
 $(document).ready(function () {
-
-    //select active link
-    select_active_link(window.location.href);
 
     //Collapse sidebar if click on anything else while expanded
     $(document).click(function(e) {
@@ -74,10 +91,14 @@ $(document).ready(function () {
             $(".header-container").toggleClass("expanded");
         }
     });
+    
+    //select active link
+    select_active_link(window.location.href);
 
     //Handle links dynamically
 	intercept_nav_links();
     intercept_title_link();
+    intercept_main_links();
     
     //Deal with history
     History.Adapter.bind(window, "statechange", function() {
@@ -99,6 +120,8 @@ $(document).ready(function () {
 			
             $("body").addClass("loading");
             
+            //if the nav bars are the same, then the link that was clicked
+            //
             if (!swap_nav) {
                 clear_selected_links();
                 select_active_link(state.url);
@@ -123,8 +146,16 @@ $(document).ready(function () {
                 //swap titles
                 document.title = $(data).filter("title").text();
                 
+                //intercept new links
+                intercept_main_links();
+                
 				//transition back
-                setTimeout(function( ){
+                setTimeout(function(){
+                    
+                    //scroll back to the top
+                    //TODO prevent when this isn't a new page (back/forward)
+                    window.scrollTo(0, 0);
+                    
                     $("#main").removeClass("loading");
                     $("nav").removeClass("loading");
                     $("body").removeClass("loading");

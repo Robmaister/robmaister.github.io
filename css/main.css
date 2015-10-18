@@ -85,6 +85,7 @@ body {
     overflow: hidden;
     background-color: #eee;
     background-color: rgba(238, 238, 238, 0.8);
+    border-right: 1px #999 solid;
     
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -227,10 +228,21 @@ footer {
 #main-title {
     text-align: center;
     font-size: 2.5em;
+    line-height: 1em;
+}
+
+#main-details {
+    margin: 0 1em;
+}
+
+#main-details span {
+    font-weight: bold;
+    margin-right: 1em;
 }
 
 #main-md {
     opacity: 1;
+    padding-bottom: 2em;
 }
 
 #main-md img {
@@ -422,6 +434,10 @@ nav.loading ul li {
     #main {
         margin: 3em 3em;
         max-width: 60em;
+    }
+    
+    .header-container {
+        border-right: none;
     }
 }
 

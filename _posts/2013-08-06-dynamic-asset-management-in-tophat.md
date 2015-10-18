@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Dynamic Asset Management in TopHat
 date: '2013-08-06 01:12:51 -0400'
-date_gmt: '2013-08-06 08:12:51 -0400'
-tags: []
+tags: [Software]
 ---
 
 Small update, I made a YouTube video showing off the ability to keep assets

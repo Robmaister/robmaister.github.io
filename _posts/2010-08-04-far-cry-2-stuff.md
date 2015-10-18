@@ -2,16 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Far Cry 2 stuff
 date: '2010-08-04 02:04:37 -0400'
-date_gmt: '2010-08-04 09:04:37 -0400'
-tags:
-- C#
-- Conversion
-- Far Cry 2
-- programming
-- Tools
-- VS2008
+tags: [Software]
 ---
 
 ![Screenshot][1]{:class="medium"}

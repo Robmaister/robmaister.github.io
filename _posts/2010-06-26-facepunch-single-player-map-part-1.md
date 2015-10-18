@@ -2,12 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Facepunch Single Player Map - part 1
 date: '2010-06-26 05:29:45 -0400'
-date_gmt: '2010-06-26 12:29:45 -0400'
-tags:
-- Hammer
-- Mapping
+tags: [Level Design, Source Engine]
 ---
 
 About a week ago, the [Facepunch Single Player Mapping Competition][1]

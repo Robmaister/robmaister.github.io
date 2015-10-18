@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
-date_gmt: '2012-10-28 23:44:45 -0400'
-tags: []
+tags: [Software, Game Jams]
 ---
 
 **MineEscape** is our entry for the RPI game dev club's game jam on 10/27/2012.

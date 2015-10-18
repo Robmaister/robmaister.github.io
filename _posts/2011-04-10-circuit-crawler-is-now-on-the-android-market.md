@@ -2,11 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Circuit Crawler is now on the Android Market!
 date: '2011-04-10 15:10:58 -0400'
-date_gmt: '2011-04-10 22:10:58 -0400'
-
-tags: []
+tags: [Software]
 ---
 
 ![Circuit Crawler art][1]

@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: LED Music Visualizer
 date: '2013-07-17 16:17:00 -0400'
-date_gmt: '2013-07-17 23:17:00 -0400'
-tags: []
+tags: [Hardware]
 ---
 
 I've spent the past few days finally working on the music visualizer that I've

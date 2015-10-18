@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Reflections on Implementing Cascaded Shadow Maps
 date: '2013-07-07 13:34:13 -0400'
-date_gmt: '2013-07-07 20:34:13 -0400'
-tags: []
+tags: [Software]
 ---
 
 So I've spent the past few days implementing shadow mapping in TopHat.

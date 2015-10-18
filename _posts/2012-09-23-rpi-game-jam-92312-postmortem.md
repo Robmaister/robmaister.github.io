@@ -2,11 +2,12 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: RPI Game Jam 9/23/12 Postmortem
 date: '2012-09-23 17:37:25 -0400'
-date_gmt: '2012-09-24 00:37:25 -0400'
-tags: []
+tags: [Software, Game Jams]
 ---
+
 This is the technical postmortem for the game I made earlier this weekend,
 "60 Sekonds to Save Boxopolis". The game was made as an entry for a 24-hour
 game jam hosted by RPI's game development club.

@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: New Years Resolution 2011
 date: '2011-01-01 23:16:06 -0500'
-date_gmt: '2011-01-02 07:16:06 -0500'
-tags: []
+tags: [Updates]
 ---
 
 I've spent a good day thinking about it. I picked up my first video game when

@@ -2,10 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Advanced State Management in Games
 date: '2012-07-29 13:11:13 -0400'
-date_gmt: '2012-07-29 20:11:13 -0400'
-tags: []
+tags: [Software]
 ---
 
 In this blog post I'm going to describe the state management system I've built

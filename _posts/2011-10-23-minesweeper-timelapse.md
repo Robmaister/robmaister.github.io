@@ -2,11 +2,10 @@
 layout: post
 status: publish
 published: true
+comments: true
 title: Minesweeper timelapse
 date: '2011-10-23 17:09:06 -0400'
-date_gmt: '2011-10-24 00:09:06 -0400'
-
-tags: []
+tags: [Software]
 ---
 
 Last friday night I noticed I was starting to lose motivation in the larger
