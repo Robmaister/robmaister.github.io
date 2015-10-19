@@ -6,6 +6,9 @@ comments: true
 title: Reflections on Implementing Cascaded Shadow Maps
 date: '2013-07-07 13:34:13 -0400'
 tags: [Software]
+preview-img:
+  url: /img/blog/2013/07/TopHat-2013-07-04-00.03.45.0008.png
+  alt: TopHat shadows
 ---
 
 So I've spent the past few days implementing shadow mapping in TopHat.

@@ -6,6 +6,9 @@ comments: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
 tags: [Software, Game Jams]
+preview-img:
+  url: /img/blog/2012/10/minescape_screen.png
+  alt: MineEscape
 ---
 
 **MineEscape** is our entry for the RPI game dev club's game jam on 10/27/2012.

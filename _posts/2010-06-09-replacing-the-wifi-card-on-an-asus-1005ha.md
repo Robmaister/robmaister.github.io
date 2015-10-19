@@ -6,6 +6,9 @@ comments: true
 title: Replacing the Wifi Card on an Asus 1005HA
 date: '2010-06-09 23:00:45 -0400'
 tags: [Hardware]
+preview-img:
+  url: /img/blog/2010/06/img_2545.jpg
+  alt: New wifi card
 ---
 
 The following post will be a guide on how to open up an Asus EeePC 1005HA and

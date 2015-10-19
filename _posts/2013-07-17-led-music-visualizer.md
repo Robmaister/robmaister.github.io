@@ -6,6 +6,9 @@ comments: true
 title: LED Music Visualizer
 date: '2013-07-17 16:17:00 -0400'
 tags: [Hardware]
+preview-img:
+  url: /img/blog/2013/07/IMG_3064.jpg
+  alt: LED strips
 ---
 
 I've spent the past few days finally working on the music visualizer that I've

@@ -5,6 +5,9 @@ published: true
 comments: true
 title: Hi everyone! (or no one, who knows?)
 date: '2010-05-07 00:43:57 -0400'
+preview-img:
+  url: /img/blog/2010/05/img_2465.jpg
+  alt: Monitors
 tags: [Updates]
 ---
 

@@ -6,6 +6,9 @@ comments: true
 title: Far Cry 2 stuff
 date: '2010-08-04 02:04:37 -0400'
 tags: [Software]
+preview-img:
+  url: /img/blog/2010/08/fc2_textureconverter.jpg
+  alt: Converter tool
 ---
 
 ![Screenshot][1]{:class="medium"}

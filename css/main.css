@@ -18,7 +18,6 @@ html {
 
 hr {
     display: block;
-    height: 1px;
     border: 0;
     border-top: 1px solid #999;
     margin: 1em 0;
@@ -304,18 +303,29 @@ footer {
     list-style-type: none;
 }
 
-#main-md .post-preview-list li:hover {
+#main-md .post-preview-list li {
+    padding: 0 30px;
+}
+
+#main-md .post-preview-list li.post {
+    padding: 0.5em 30px;
+}
+
+#main-md .post-preview-list li.post:hover {
     background-color: #6e6e6e;
     background-color: rgba(110, 110, 110, 0.2);
 }
 
 #main-md .post-preview-list a {
+    display: inline-block;
+    
+    width: 100%;
     color: #444;
 }
 
 #main-md .post-preview-list .title-line {
     display: block;
-    margin: 0.5em 30px;
+    margin: 0.5em 0;
     font-size: 1.1em;
     font-weight: bold;
 }
@@ -326,27 +336,33 @@ footer {
 
 #main-md .post-preview-list p {
     display: block;
-    margin: 0 30px;
-    min-height: 300px;
+    min-height: 280px;
 }
 
-#main-md .post-preview-list img {
+#main-md .post-preview-list .img-container {
     float: left;
-    width: 400px;
-    height: 300px;
+    width: 448px;
+    height: 280px;
+    text-align: center;
+    margin-right: 30px;
+    background-color: #999;
+    line-height: 278px; /* HACK if it's not (height - 2) then the image shifts 1px below the container */
+}
+
+#main-md .post-preview-list .img-container img {
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    display: initial;
+}
+
+#main-md .post-preview-list .img-container i {
+    width: 100%;
+    vertical-align: middle;
 }
 
 #main-md .post-preview-list hr {
-    margin: 1em 30px;
-}
-
-#main-md .post-preview-list .img-placeholder {
-    float: left;
-    width: 400px;
-    text-align: center;
-    padding: 120px 0;
-    margin: 0 30px;
-    background-color: #999;
+    margin: 0 0;
 }
 
 .social-media-link {

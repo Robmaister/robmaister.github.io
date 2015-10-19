@@ -6,6 +6,9 @@ comments: true
 title: Circuit Crawler is now on the Android Market!
 date: '2011-04-10 15:10:58 -0400'
 tags: [Software]
+preview-img:
+  url: /img/blog/2011/04/header.png
+  alt: Circuit Crawler header
 ---
 
 ![Circuit Crawler art][1]

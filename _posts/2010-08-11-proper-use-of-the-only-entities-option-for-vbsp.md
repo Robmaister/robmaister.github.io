@@ -6,6 +6,9 @@ comments: true
 title: Proper use of the "Only Entities" option for VBSP
 date: '2010-08-11 02:14:35 -0400'
 tags: [Level Design, Source Engine]
+preview-img:
+  url: /img/blog/2010/08/hammer2.jpg
+  alt: settings
 ---
 
 I'm sure many of you who use Hammer glance at the "Only Entities" setting for

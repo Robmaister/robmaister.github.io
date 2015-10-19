@@ -1,7 +1,7 @@
 <ul class="post-preview-list">
     {% for post in site.posts %}
         {% if include.filter-tag == nil or post.tags contains include.filter-tag %}
-            <li>
+            <li class="post">
                 <a href="{{ post.url }}">
                 <div class="title-line">
                     <span>{{ post.title }}</span>
@@ -9,18 +9,24 @@
                     {% include post-details.html page=post %}
                 </div>
                 
+                <div class="img-container">
                 {% if post.preview-img %}
                     <img src="{{ post.preview-img.url }}" alt="{{ post.preview-img.alt }}"></img>
                 {% else %}
                     <i class="fa fa-3x fa-picture-o img-placeholder"></i>
                 {% endif %}
-                
+                </div>
+            
                 <p>{{ post.excerpt | strip_html }}</p>
                 </a>
-                {% if forloop.last != true %}
-                <hr>
-                {% endif %}
             </li>
+        
+            {% if forloop.last != true %}
+            <li class="divider">
+            <hr>
+            </li>
+            {% endif %}
+        
         {% endif %}
     {% endfor %}
 </ul>

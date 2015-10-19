@@ -6,6 +6,9 @@ comments: true
 title: It's been a while, have some screenshots!
 date: '2012-05-12 00:03:57 -0400'
 tags: [Software]
+preview-img:
+  url: /img/blog/2012/05/tophat-05-11-2012-11-06-10-3365-pm.png
+  alt: TopHat Bug
 ---
 I'm working on a new project with a whole bunch of friends and I just tried
 implementing multitexturing for the terrain. When I first tested it, I had the

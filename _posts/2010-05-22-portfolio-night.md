@@ -7,6 +7,9 @@ title: Portfolio night
 date: '2010-05-22 16:29:20 -0400'
 date_gmt: '2010-05-22 23:29:20 -0400'
 tags: [Level Design, Source Engine]
+preview-img:
+  url: /img/blog/2010/05/english_art_deco0000.jpg
+  alt: Art Deco
 ---
 
 So this last Thursday was portfolio night. Over the past week, I've put
