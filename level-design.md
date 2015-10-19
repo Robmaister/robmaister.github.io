@@ -2,6 +2,7 @@
 layout: page
 title: Level Design
 bg: jp_diner_port0037.jpg
+comment-count: true
 nav:
   - text: Back
     icon: fa-arrow-left
@@ -18,3 +19,7 @@ nav:
 ---
 
 Select an engine on the left to view my level designs for that engine.
+
+## Relevant Blog Posts
+
+{% include post-preview.html filter-tag="Level Design" %}
