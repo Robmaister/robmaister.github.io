@@ -4,11 +4,12 @@ email: robert.rouhani@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   The homepage of Robert Rouhani
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://robmaister.com/" # the base hostname & protocol for your site
+url: "http://robmaister.com" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+timezone: America/New_York
 
 social-media-links:
   - site: Github
