@@ -259,12 +259,49 @@ footer {
     height: 400px;
 }
 
-#main-md td {
+#main-md table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#main-md table.data-table {
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid #444;
+    table-layout: initial;
+}
+
+#main-md table.data-table thead {
+    background-color: #aaa;
+}
+
+#main-md table.data-table thead tr:last-child th {
+    border-bottom: 1px solid #666;
+}
+
+#main-md table.data-table tbody {
+    background-color: #bbb;
+}
+
+#main-md table.data-table tbody tr:hover {
+    background-color: #a5a5a5;
+}
+
+#main-md table.data-table tfoot {
+    background-color: #999;
+    font-weight: bold;
+}
+
+#main-md table.data-table tfoot tr:first-child td {
+    border-top: 1px solid #666;
+}
+
+#main-md td, th {
     padding: 5px;
 }
 
 #main-md h1 {
-    margin: 0 0 1em 0;
+    margin: 1.5em 0 1em 0;
 }
 
 #main-md a {
@@ -278,24 +315,6 @@ footer {
 
 #main-md a:hover {
     color: #0087ca;
-}
-
-#main-md a.button {
-    padding: 1em;
-    margin-right: 0.5em;
-    text-decoration: none;
-    font-size: 1.2em;
-    display: inline-block;
-    
-    border-radius: 0.5em;
-    
-    background: #444;
-    color: #fafafa;
-}
-
-#main-md a.button:hover {
-    background: #666;
-    color: #ddd;
 }
 
 #main-md .post-preview-list {
@@ -362,6 +381,10 @@ footer {
     margin: 0 0;
 }
 
+#disqus_thread {
+    margin-top: 1em;
+}
+
 .social-media-link {
     display: inline-block;
     text-decoration: none;
@@ -374,6 +397,28 @@ footer {
     display: none;
     font-size: 0.75em;
     color: #444;
+}
+
+/* ==========================================================================
+   Utility classes
+   ========================================================================== */
+
+a.button {
+    display: inline-block   !important;
+    padding: 0.5em 1em      !important;
+    margin: 0 0.5em 1em 0   !important;
+    font-size: 1.2em        !important;
+    border-radius: 0.5em    !important;
+
+    background: #444        !important;
+    color: #fafafa          !important;
+
+    text-decoration: none   !important;
+}
+
+a.button:hover {
+    background: #666        !important;
+    color: #ddd             !important;
 }
 
 /* ==========================================================================
@@ -506,6 +551,10 @@ nav.loading ul li {
     #main {
         margin: 3em 3em;
         max-width: 60em;
+    }
+    
+    #main-md table.data-table {
+        max-width: 500px;
     }
     
     .header-container {
