@@ -2,7 +2,9 @@
 layout: default
 ---
 <h1 id="main-title">{{ page.title }}</h1>
-<hr>
+{% if page.subtitle %}<h2 id="main-subtitle">{{ page.subtitle }}</h2>{% endif %}
+<hr />
+{% if page.sidebar %}<div id="sidebar">{{ page.sidebar | markdownify }}</div>{% endif %}
 <div id="main-md">
 {{ content }}
 </div>

@@ -1,32 +1,45 @@
-<ul class="post-preview-list">
+{% assign post_count=0 %}
+
+{% if include.limit == null %}
+    {% assign include.limit=50 %}
+{% endif %}
+
+<div class="post-preview-list">
     {% for post in site.posts %}
+        {% if post_count >= include.limit %}
+            {% break %}
+        {% endif %}
+    
         {% if include.filter-tag == nil or post.tags contains include.filter-tag %}
-            <li class="post">
+            <div class="post">
                 <a href="{{ post.url }}">
                 <div class="title-line">
-                    <span>{{ post.title }}</span>
-                    <span>&bull;</span>
+                    <span class="title">{{ post.title }}</span>
                     {% include post-details.html page=post %}
                 </div>
                 
-                <div class="img-container">
                 {% if post.preview-img %}
+                <div class="img-container">
                     <img src="{{ post.preview-img.url }}" alt="{{ post.preview-img.alt }}"></img>
-                {% else %}
-                    <i class="fa fa-3x fa-picture-o img-placeholder"></i>
-                {% endif %}
                 </div>
-            
+                {% else %}
+                <div class="img-container img-container-empty">
+                    <i class="fa fa-3x fa-picture-o img-placeholder"></i>
+                </div>
+                {% endif %}
+
                 <p>{{ post.excerpt | strip_html }}</p>
                 </a>
-            </li>
+            </div>
         
             {% if forloop.last != true %}
-            <li class="divider">
+            <div class="divider">
             <hr>
-            </li>
+            </div>
             {% endif %}
+            
+            {% assign post_count=post_count | plus:1 %}
         
         {% endif %}
     {% endfor %}
-</ul>
+</div>

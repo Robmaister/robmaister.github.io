@@ -13,7 +13,7 @@ handles:
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /blog/:categories/:year/:month/:day/:title/
 timezone: America/New_York
 
 social-media-links:
@@ -35,32 +35,4 @@ defaults:
     scope:
       path: ""
     values:
-      bg: bg3456.jpg
-      nav:
-        - text: Blog
-          icon: fa-pencil
-          url:  /blog/
-        - text: Software
-          icon: fa-code
-          url:  /software/
-        - text: Hardware
-          icon: fa-cogs
-          url:  /hardware/
-        - text: Level Design
-          icon: fa-map-o
-          url:  /level-design/
-        - text: Photography
-          icon: fa-camera
-          url:  /photography/
-        - text: Graphic Design
-          icon: fa-picture-o
-          url:  /graphic-design/
-        - text: Event Planning
-          icon: fa-calendar
-          url:  /event-planning/
-  - 
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      category: blog
+      bg: bg-default.jpg

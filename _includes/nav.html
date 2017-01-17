@@ -1,0 +1,9 @@
+<div class="header-container">
+    <header class="clearfix">
+        <nav>
+            <ul class="nav-root">
+            {% for n in layout.nav %}<li class="nav-item"><a href="{{ n.url }}"><span class="nav-text">{{ n.text }}</span></a></li>{% endfor %}
+            </ul>
+        </nav>
+    </header>
+</div>

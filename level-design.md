@@ -20,6 +20,6 @@ nav:
 
 Select an engine on the left to view my level designs for that engine.
 
-## Relevant Blog Posts
+## Recent Posts
 
-{% include post-preview.html filter-tag="Level Design" %}
+{% include post-preview.html tag="Level Design" limit=5 %}
