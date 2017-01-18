@@ -3,18 +3,23 @@ layout: post
 status: publish
 published: true
 comments: true
+has_code: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
 tags: [Software, Game Jams]
 preview-img:
   url: /img/blog/2012/10/minescape_screen.png
   alt: MineEscape
+sidebar: |
+    ## Download
+    - [<i class="fa fa-download"></i> Binary](https://github.com/Robmaister/RPI-Game-Jam-10-27-12/downloads){: .button}
+    - [<i class="fa fa-code"></i> Source](https://github.com/Robmaister/RPI-Game-Jam-10-27-12){: .button}
+    {: .list-no-style}
 ---
 
 **MineEscape** is our entry for the RPI game dev club's game jam on 10/27/2012.
 
-[<i class="fa fa-download"></i> Binary][1]{:class="button"}
-[<i class="fa fa-code"></i> Source][2]{:class="button"}
+
 
 Requires OpenAL. If the game crashes at the very beginning, this is probably
 the issue. [Download it here][3].
@@ -146,7 +151,7 @@ wrote a basic state manager really early on that kept track of a state stack
 I got the game to restart after winning was by spawning a main menu state
 under the next menu after the main menu was popped off the stack:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 startMenu.OnPopped +=
 	(s, e) =>
 	{
@@ -164,7 +169,7 @@ clearing the entire stack knowing that the method immediately after update
 would check for an empty stack and exit the game, giving it no time to
 actually push the new stack on.
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 else if (action.clearing)
 {
 	while (stack.Count > 0)

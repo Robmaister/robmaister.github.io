@@ -16,10 +16,6 @@ with the first gate puzzle. I've added a lot more since I recorded the video,
 I suggest you keep up with the Facepunch thread, as I'll probably only be
 putting the videos I upload to youtube on my blog.
 
-{::comment}
-	TODO youtube embed properly
-{:/comment}
-
-<iframe width="420" height="315" src="http://www.youtube.com/embed/xqjY0vVlU9k" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+{% include embed/video.html url='http://www.youtube.com/embed/xqjY0vVlU9k' %}
 
 [1]: http://www.facepunch.com/showthread.php?t=954103

@@ -141,7 +141,7 @@ again and the game was reset to the title menu. The solution? Pass a lambda
 function to player, player stores it and invokes it whenever it collides with
 an obstacle or goal object.
 
-{% highlight python %}
+{% highlight python linenos %}
 def collide_obstacle(obstacle):
     global levelTime, goal_obstacles, pickup_sound, hurt_sound
     key = pygame.key.get_pressed()
@@ -156,11 +156,11 @@ def collide_obstacle(obstacle):
         hurt_sound.play()
 {% endhighlight %}
 
-{% highlight python %}
+{% highlight python linenos %}
 player = Player((32, 32), 1, lambda o: collide_obstacle(o))
 {% endhighlight %}
 
-{% highlight python %}
+{% highlight python linenos %}
 class Player(pygame.sprite.Sprite):
     def __init__(self, (x, y), speed, collide_lambda, fps=10):
         self.collide_obstacle = collide_lambda

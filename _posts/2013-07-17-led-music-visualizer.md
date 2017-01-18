@@ -19,7 +19,7 @@ project "done".
 
 ------------------------------------------------------------------------------
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/FjP1wSDdw-c" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+{% include embed/video.html url='http://www.youtube.com/embed/FjP1wSDdw-c' %}
 
 As the video shows, the visualizer doesn't require much hardware knowledge. So
 long as you have the equipment to do some soldering (or at least a friend who
@@ -79,7 +79,7 @@ good enough to make something visually pleasing.
 
 ### Source Code
 
-[<i class="fa fa-github"></i> Github][9]{:class="button"}
+[<i class="fa fa-github"></i> Github][9]{: .button}
 
 In case you glanced over the setup section.
 

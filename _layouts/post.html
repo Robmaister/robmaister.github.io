@@ -6,6 +6,7 @@ layout: default
     {% include post-details.html page=page tags=true %}
 </div>
 <hr />
+{% if page.sidebar %}<div id="sidebar">{{ page.sidebar | markdownify }}</div>{% endif %}
 <div id="main-md">
     {{ content }}
 </div>

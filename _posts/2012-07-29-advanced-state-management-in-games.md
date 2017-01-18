@@ -34,7 +34,7 @@ escape-the-room game. Each clickable area was a state and I hardcoded all the
 states together and it worked pretty well for a small game. The
 [full source code][1] is available on my GitHub account.
 
-{% highlight cpp %}
+{% highlight cpp linenos %}
 enum GameStates {
 	mainMenu,
 	room1Side1,
@@ -110,7 +110,7 @@ virtual GameWindow methods and route them to the current state.
 As you can see in [the source for my Ludum Dare 22 entry][3], Each state is a
 class that implements the IState interface, which I defined as the following:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 public interface IState
 {
 	void OnLoad(EventArgs e);
@@ -145,7 +145,7 @@ them layers instead.
 Control over which actions are passed through to the next layer are defined as
 3 separate enums (comments stripped out for readability on a blog):
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 [Flags]
 public enum LayerActionStates
 {
@@ -176,7 +176,7 @@ public enum LayerMouseStates
 
 And in the ILayer interface, I define the following properties:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 public interface ILayer
 {
 	//...
@@ -193,7 +193,7 @@ Looking back, these 3 enums can easily be consolidated into a single enum,
 which takes advantage of the fact that they're bitfields (currently I'm only
 using the first 2 bits for 3 separate enums). Either way, here's how I use it:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 bool continueMouse = true, continueKeyboard = true, continueUpdate = true;
 foreach (ILayer layer in layerStack)
 {
@@ -227,7 +227,7 @@ Yes, it's possible to render forwards and get that same layering effect with
 some fancy depth peeling code, but this way is a lot simpler and only has a
 small amount of overhead:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 //flip the stack to render (rendering needs to happen bottom up, otherwise bottom layer occludes everything above it, etc.)
 renderStack.Clear();
 foreach (ILayer layer in layerStack)
@@ -248,7 +248,7 @@ foreach (ILayer layer in renderStack)
 And here's how I manage the layer stack from anywhere in the code (not
 thread-safe, but it's only ever accessed from one thread):
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 //Originally from http://blog.robmaister.com/advanced-state-management-in-games/
 public static class LayerManager
 {

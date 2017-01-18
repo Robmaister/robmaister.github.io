@@ -90,9 +90,9 @@ textarea {
     resize: vertical;
 }
 
-/* ==========================================================================
+/* ========================================================================
    Browser Upgrade Prompt
-   ========================================================================== */
+   ======================================================================== */
 
 .browserupgrade {
     margin: 0.2em 0;
@@ -101,9 +101,9 @@ textarea {
     padding: 0.2em 0;
 }
 
-/* ==========================================================================
+/* ========================================================================
    Author's custom styles
-   ========================================================================== */
+   ======================================================================== */
 
 body {
     font: 16px/24px {{ page.font-body }};
@@ -250,7 +250,7 @@ footer {
     margin-right: 1em;
 }
 
-ul.list-no-style {
+.list-no-style {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -298,67 +298,8 @@ ul.list-no-style {
 #main-md img {
     max-width: 100%;
     height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-#main-md .img-small {
-    max-height: 200px;
-}
-
-#main-md .img-medium {
-    max-height: 600px;
-}
-
-#main-md .img-head {
     margin: 0.5em auto;
-}
-
-#main-md .img-inline {
-    display: inline-block;
-    margin: 0.5em;
-    float: left;
-}
-
-#main-md table {
-    width: 100%;
-    table-layout: fixed;
-}
-
-#main-md table.data-table {
-    width: 80%;
-    margin: 0px auto;
-    border: 1px solid #222;
-    table-layout: initial;
-}
-
-#main-md table.data-table thead {
-    background-color: #aaa;
-}
-
-#main-md table.data-table thead tr:last-child th {
-    border-bottom: 1px solid #666;
-}
-
-#main-md table.data-table tbody {
-    background-color: #bbb;
-}
-
-#main-md table.data-table tbody tr:hover {
-    background-color: #a5a5a5;
-}
-
-#main-md table.data-table tfoot {
-    background-color: #999;
-    font-weight: bold;
-}
-
-#main-md table.data-table tfoot tr:first-child td {
-    border-top: 1px solid #666;
-}
-
-#main-md td, th {
-    padding: 5px;
+    display: block;
 }
 
 #main-md h1 {
@@ -370,46 +311,47 @@ ul.list-no-style {
     color: {{ page.primary-color-dark }};
 }
 
-#main-md a {
+#main-md p a, #main-md li a {
     text-decoration: none;
     color: {{ page.accent-color-medium }};
     font-weight: 700;
 }
 
-#main-md a:visited {
+#main-md p a:visited, #main-md li a:visited {
     color: {{ page.accent-color-medium }};
 }
 
-#main-md a:hover {
+#main-md p a:hover, #main-md li a:hover {
     color: {{ page.accent-color-dark }};
 }
 
-#main-md .post-preview-list {
+.post-preview-list {
     padding: 0;
     list-style-type: none;
     clear: both;
 }
 
-#main-md .post-preview-list > div {
+.post-preview-list > div {
     padding: 0 30px;
 }
 
-#main-md .post-preview-list div.post {
+.post-preview-list div.post {
     padding: 0.5em 30px;
 }
 
-#main-md .post-preview-list div.post:hover {
+.post-preview-list div.post:hover {
     background-color: #6e6e6e;
     background-color: rgba(110, 110, 110, 0.2);
 }
 
-#main-md .post-preview-list a {
+.post-preview-list a {
     display: inline-block;
     width: 100%;
     color: #222;
+    text-decoration: none;
 }
 
-#main-md .post-preview-list .title-line {
+.post-preview-list .title-line {
     display: block;
     margin: 0.25em 0;
     font-size: 1.05em;
@@ -417,25 +359,25 @@ ul.list-no-style {
     font-family: {{ page.font-secondary }};
 }
 
-#main-md .post-preview-list .title-line span {
+.post-preview-list .title-line span {
     margin-right: 0.25em;
     display: inline-block;
 }
 
-#main-md .post-preview-list .title-line .title {
+.post-preview-list .title-line .title {
     color: {{ page.accent-color-medium }};
 }
 
-#main-md .post-preview-list .title-line .title-details {
+.post-preview-list .title-line .title-details {
     float: right;
 }
 
-#main-md .post-preview-list p {
+.post-preview-list p {
     display: block;
     font-weight: normal;
 }
 
-#main-md .post-preview-list .img-container {
+.post-preview-list .img-container {
     max-width: 100%;
     width: 320px;
     height: 200px;
@@ -444,25 +386,118 @@ ul.list-no-style {
     line-height: 200px;
 }
 
-#main-md .post-preview-list .img-container.img-container-empty {
+.post-preview-list .img-container.img-container-empty {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#main-md .post-preview-list .img-container img {
+.post-preview-list .img-container img {
     max-height: 100%;
     max-width: 100%;
     vertical-align: middle;
     display: initial;
 }
 
-#main-md .post-preview-list .img-container i {
+.post-preview-list .img-container i {
     width: 100%;
     vertical-align: middle;
     color: {{ page.accent-color-dark }};
 }
 
-#main-md .post-preview-list hr {
+.post-preview-list hr {
     margin: 0 0;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.data-table {
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid #222;
+    table-layout: initial;
+}
+
+.data-table thead {
+    background-color: #aaa;
+}
+
+.data-table thead tr:last-child th {
+    border-bottom: 1px solid #666;
+}
+
+.data-table tbody {
+    background-color: #bbb;
+}
+
+.data-table tbody tr:hover {
+    background-color: #a5a5a5;
+}
+
+.data-table tfoot {
+    background-color: #999;
+    font-weight: bold;
+}
+
+.data-table tfoot tr:first-child td {
+    border-top: 1px solid #666;
+}
+
+.img-small {
+    max-height: 200px;
+}
+
+.img-medium {
+    max-height: 600px;
+}
+
+.img-head {
+    margin: 0.5em auto;
+}
+
+.img-inline {
+    display: inline-block;
+    margin: 0.5em;
+    float: left;
+}
+
+.embed-responsive-container {
+    margin: 0 auto;
+}
+
+.video-responsive-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    clear: both;
+}
+
+.video-responsive {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.instagram-media {
+    /* Force instagram embed to be centered */
+    margin: 0.5em auto !important;
+}
+
+.highlight {
+    margin: 0;
+    padding: 0 0.5em;
+}
+
+.highlight table {
+    table-layout: initial;
+}
+
+.code pre {
+    margin-left: 1.5em;
 }
 
 #disqus_thread {
@@ -482,9 +517,9 @@ ul.list-no-style {
     color: #222;
 }
 
-/* ==========================================================================
+/* ========================================================================
    Utility classes
-   ========================================================================== */
+   ======================================================================== */
 
 a.button {
     display: inline-block;
@@ -494,35 +529,33 @@ a.button {
     line-height: 2.2em;
     border-radius: 0.5em;
     box-sizing: border-box;
+    text-decoration: none;
 
     background: {{ page.accent-color-dark }};
-    color: #fff;
 
-    text-decoration: none;
+    /* TODO find a way to fix this, #main-md .a is considered more narrow */
+    color: #fff !important;
 }
 
 a.button:hover {
     background: {{ page.accent-color-medium }};
 }
 
-/* ==========================================================================
+/* ========================================================================
    Javascript-controlled states
-   ========================================================================== */
+   ======================================================================== */
    
 #main.loading {
     opacity: 0;
 }
 
 nav.loading ul li {
-    /*-webkit-transform: translate(-18em,0px);
-        -ms-transform: translate(-18em,0px);
-            transform: translate(-18em,0px);*/
-            opacity: 0;
+    opacity: 0;
 }
 
-/* ==========================================================================
+/* ========================================================================
    Helper classes
-   ========================================================================== */
+   ======================================================================== */
 
 /*
  * Hide visually and from screen readers
@@ -594,9 +627,9 @@ nav.loading ul li {
     clear: both;
 }
 
-/* ==========================================================================
+/* ========================================================================
    Media Queries for Responsive Design.
-   ========================================================================== */
+   ======================================================================== */
 
 @media only screen and (min-width: 768px) {
 
@@ -633,6 +666,7 @@ nav.loading ul li {
         float: right;
         padding-left: 16px;
         margin-left: 16px;
+        margin-bottom: 16px;
         border-left: 1px solid {{ page.primary-color-medium }};
     }
 
@@ -689,11 +723,11 @@ nav.loading ul li {
     }
 }
 
-/* ==========================================================================
+/* ========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+   ======================================================================== */
 
 @media print {
     *,
