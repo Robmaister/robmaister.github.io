@@ -73,7 +73,9 @@ Start by cutting a piece of elastic to length. I put my headset on and
 measured the elastic from the left strap hole to about the back of my head
 and made a cut there.
     
-![thread and needle][6] | ![sewing][7]
+ - ![thread and needle][6]
+ - ![sewing][7]
+ {: .img-grid}
     
 Thread the needle and start sewing the elastic on the headset like the picture
 above. If you don't know how to sew, there are some great tutorials and videos
@@ -81,7 +83,9 @@ online for beginners. I used a cross stitch, but a running stitch would work
 just fine.
     
     
-![adjuster left][8] | ![left sew][9]
+ - ![adjuster left][8]
+ - ![left sew][9]
+ {: .img-grid}
 
 Grab one of the strap adjusters and loop the elastic around it like the
 picture above. The instructions for my strap adjusters recommend stitching an
@@ -95,14 +99,18 @@ the way to the back of the head and a little further, for adjustment. Then sew
 it to the headset like before. This time I ran out of black thread, so it's
 white on this half.
     
-![adjuster right][11] | ![seal it off][12]
+ - ![adjuster right][11]
+ - ![seal it off][12]
+ {: .img-grid}
 
 Loop this piece through the strap adjuster like the picture above and sew it
 after folding it over itself. **I would recommend actually folding it over
 twice**, since the tab I made can actually slip through the adjuster without
 too much trouble. This is something I'm planning on fixing later.
 
-![dremel start][13] | ![filed down][14]
+ - ![dremel start][13]
+ - ![filed down][14]
+ {: .img-grid}
 
 Grab your Dremel (or other rotary tool) and start cutting away at the nose
 hole. For me this was a long process of cutting part of it away, trying it on,
@@ -116,7 +124,9 @@ as before until the whole headset feels good on your face. Then file all of
 it down and finish by sanding everything you cut to give you nice, smooth
 edges.
     
-![cut foam][16] | ![put groove in foam][17]
+ - ![cut foam][16]
+ - ![put groove in foam][17]
+ {: .img-grid}
 
 Cut out a small piece of foam. I ended up using only half the amount of foam
 as I cut out in the picture. Cut pieces to size and create a groove in the

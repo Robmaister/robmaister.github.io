@@ -331,12 +331,8 @@ footer {
     clear: both;
 }
 
-.post-preview-list > div {
-    padding: 0 30px;
-}
-
 .post-preview-list div.post {
-    padding: 0.5em 30px;
+    padding: 0.25em 4px;
 }
 
 .post-preview-list div.post:hover {
@@ -460,6 +456,24 @@ table {
     display: inline-block;
     margin: 0.5em;
     float: left;
+}
+
+#main-md ul.img-grid {
+    display: table;
+    list-style: none;
+    width: 100%;
+    table-layout: fixed;
+    padding: 0;
+    text-indent: 0;
+}
+
+#main-md ul.img-grid li {
+    display: table-cell;
+    padding: 0.25em;
+}
+
+#main-md ul.img-grid li:before {
+    display: none;
 }
 
 .embed-responsive-container {
