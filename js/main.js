@@ -1,37 +1,47 @@
 
-// Intercept all nav links for history.js
-function intercept_nav_links() {
-    $(".nav-item").click(function(e) {
-        e.preventDefault();
-		History.pushState(null, document.title,
-            $(this).children("a:first").attr('href')
-        );
-	});
-}
+//TODO some auto-scroll locations are wrong when navigating back and forth
+//between pages of different heights. Most noticable by scrolling to the
+//bottom of /blog and clicking on the last article, then pressing the browser
+//back button.
 
-function intercept_main_links() {
-    $("#main-md a").click(function(e) {
+// Intercept links for history.js
+function intercept_links(selector) {
+    $(selector).click(function(e) {
 
         //don't intercept external links or ones forced off
         if (this.host == location.host && !$(this).hasClass("ext-link")) {
-            e.preventDefault();
             History.pushState(null, document.title, $(this).attr('href'));
+            
+            //clicking on a link should scroll to top
+            //browser forward/back maintain scrolling positions
+            window.scrollTo(0, 0);
+
+            e.preventDefault();
         }
-    });
+	});
 }
 
 // Makes sure there are no selected nav bar links
 function clear_selected_links() {
-    $(".nav-item.selected").each(function() {
+    $("nav ul li a").each(function() {
         $(this).removeClass("selected");
     });
 }
 
 // Selects a nav bar link (the page currently being viewed)
 function select_active_link(active_url) {
-    $(".nav-item a").each(function() {
-        if (active_url === this.href) {
-            $(this).closest("li").addClass("selected");
+
+    //Sort the nav links in order of longest href to shortest then find the
+    //first one that is the root of the current url. This provides the most
+    //specific link instead of just the first one.
+    $("nav ul li a")
+    .sort(function(a, b) {
+        return a.href.length < b.href.length;
+    })
+    .each(function() {
+        if (active_url.startsWith(this.href)) {
+            $(this).addClass("selected");
+            return false;
         }
     });
 }
@@ -43,21 +53,22 @@ $(document).ready(function () {
     select_active_link(window.location.href);
 
     //Handle links dynamically
-	intercept_nav_links();
-    intercept_main_links();
-    
+	intercept_links("nav ul li a");
+    intercept_links("#main-md a");
+
     //Deal with history
-    History.Adapter.bind(window, "statechange", function() {
+    $(window).on("statechange", function() {
         var state = History.getState();
-        var data = state.data;
+        var hsData = state.data;
         
         //AJAX get the new page
         $.get(state.url, function(data) {
             
             //get some CSS3 transitions going
-			$("#main").addClass("loading");			
+            $("#main").addClass("loading");
             $("body").addClass("loading");
 
+            //prep nav links
             clear_selected_links();
             select_active_link(state.url);
 
@@ -106,17 +117,11 @@ $(document).ready(function () {
                 document.title = jData.filter("title").text();
                 
                 //intercept new links
-                intercept_main_links();
+                intercept_links("#main-md a");
                 
-				//transition back
+				//transition back after a short wait
                 setTimeout(function(){
-                    
-                    //scroll back to the top
-                    //TODO prevent when this isn't a new page (back/forward)
-                    window.scrollTo(0, 0);
-                    
                     $("#main").removeClass("loading");
-                    $("nav").removeClass("loading");
                     $("body").removeClass("loading");
                 }, 10);
             }, 500);

@@ -164,27 +164,26 @@ nav ul li {
     cursor: pointer;
 }
 
-nav ul li:hover {
+nav ul li a {
+    display: block;
+    font-size: 1.2em;
+    line-height: 3em;
+    text-decoration: none;
+    color: #ddd;
+}
+
+nav ul li a:hover {
     background-color: #666;
     background-color: rgba(102, 102, 102, 0.4);
 }
 
-nav ul li.selected {
+nav ul li a.selected {
     background-color: #555;
     background-color: rgba(85, 85, 85, 0.4);
 }
-nav ul li.selected:hover {
+nav ul li a.selected:hover {
     background-color: #666;
     background-color: rgba(102, 102, 102, 0.4);
-}
-
-nav ul li a {
-    /*padding-left: 0.6em;*/
-    font-size: 1.2em;
-    line-height: 3em;
-    vertical-align: middle;
-    text-decoration: none;
-    color: #ddd;
 }
 
 footer {
@@ -657,11 +656,11 @@ nav.loading ul li {
         border-top-right-radius: {{ page.body-border-radius }};
     }
 
-    nav ul li:first-child {
+    nav ul li:first-child a {
         border-top-left-radius: {{ page.body-border-radius }};
     }
 
-    nav ul li:last-child {
+    nav ul li:last-child a {
         border-top-right-radius: {{ page.body-border-radius }};
     }
  
