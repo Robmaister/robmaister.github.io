@@ -226,7 +226,7 @@ footer {
 
 #main-title {
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
     line-height: 1em;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
@@ -247,6 +247,7 @@ footer {
 #main-details span {
     font-weight: bold;
     margin-right: 1em;
+    display: inline-block;
 }
 
 .list-no-style {
@@ -297,7 +298,7 @@ footer {
 #main-md img {
     max-width: 100%;
     height: auto;
-    margin: 0.5em auto;
+    margin: 0 auto;
     display: block;
 }
 
@@ -352,6 +353,7 @@ footer {
     font-size: 1.05em;
     font-weight: bold;
     font-family: {{ page.font-secondary }};
+    text-align: center;
 }
 
 .post-preview-list .title-line span {
@@ -364,7 +366,7 @@ footer {
 }
 
 .post-preview-list .title-line .title-details {
-    float: right;
+    text-align: center;
 }
 
 .post-preview-list p {
@@ -373,9 +375,6 @@ footer {
 }
 
 .post-preview-list .img-container {
-    max-width: 100%;
-    width: 320px;
-    height: 200px;
     margin: 0px auto;
     text-align: center;
     line-height: 200px;
@@ -386,10 +385,9 @@ footer {
 }
 
 .post-preview-list .img-container img {
-    max-height: 100%;
-    max-width: 100%;
     vertical-align: middle;
-    display: initial;
+    max-height: 100%;
+    margin-bottom: 1em;
 }
 
 .post-preview-list .img-container i {
@@ -409,13 +407,13 @@ table {
 
 .data-table {
     width: 80%;
-    margin: 0px auto;
+    max-width: 500px;
+    margin: 0 auto;
     border: 1px solid #222;
-    table-layout: initial;
+    table-layout: auto;
 }
 
 .data-table thead {
-    background-color: #aaa;
 }
 
 .data-table thead tr:last-child th {
@@ -674,6 +672,13 @@ nav.loading ul li {
         width: 768px;
     }
 
+    #main-title {
+        font-size: 3em;
+        line-height: 1em;
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+    }
+
     #sidebar {
         width: 230px;
         float: right;
@@ -693,15 +698,21 @@ nav.loading ul li {
 
     #main-md .post-preview-list .title-line {
         font-size: 1.25em;
+        text-align: left;
+        margin: 0.75em 0;
+    }
+
+    .post-preview-list .title-line .title-details {
+        float: right;
     }
 
     #main-md .post-preview-list .img-container {
         float: left;
         width: 448px;
         height: 280px;
-        line-height: 278px;
-        margin-right: 30px;
-        margin-bottom: 10px;
+        line-height: 280px;
+        margin-right: 1.75em;
+        margin-bottom: 1.5em;
     }
     
     .copyright {
@@ -720,7 +731,6 @@ nav.loading ul li {
     }
     
     #main-md table.data-table {
-        max-width: 500px;
     }
 
     #main-md .img-small {

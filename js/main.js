@@ -62,7 +62,8 @@ $(document).ready(function () {
         var hsData = state.data;
         
         //AJAX get the new page
-        $.get(state.url, function(data) {
+        $.get(state.url)
+        .done(function(data) {
             
             //get some CSS3 transitions going
             $("#main").addClass("loading");
@@ -125,6 +126,9 @@ $(document).ready(function () {
                     $("body").removeClass("loading");
                 }, 10);
             }, 500);
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            window.location.href = state.url;
         });
     });
 });

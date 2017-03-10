@@ -3,4 +3,4 @@ layout: page
 title: Portfolio
 ---
 
-[Level Design](level-design)
+[Level Design](/portfolio/level-design/)
