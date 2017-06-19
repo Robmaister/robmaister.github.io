@@ -1,9 +1,9 @@
 <div class="title-details">
-<span><i class="fa fa-lg fa-clock-o"></i> {{ include.page.date | date: "%B %-d, %Y" }}</span>
-<span>&bull;</span>
-<i class="fa fa-lg fa-comments-o"></i> <span class="disqus-comment-count" data-disqus-identifier="{{ include.page.id }}">0 Comments</span>
+<span><i class="fa fa-lg fa-fw fa-clock-o"></i> {{ include.page.date | date: "%B %-d, %Y" }}</span>
+<span class="sep">&bull;</span>
+<span><i class="fa fa-lg fa-fw fa-comments-o"></i> <span class="disqus-comment-count" data-disqus-identifier="{{ include.page.id }}">0 Comments</span></span>
 {% if include.tags %}
-<span>&bull;</span>
-<span><i class="fa fa-lg fa-tags"></i> {% for post_tag in include.page.tags %}{{ post_tag }} {% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+<span class="sep">&bull;</span>
+<span><i class="fa fa-lg fa-fw fa-tags"></i> {% for post_tag in include.page.tags %}{{ post_tag }} {% if forloop.last == false %}, {% endif %}{% endfor %}</span>
 {% endif %}
 </div>
