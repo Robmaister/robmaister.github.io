@@ -6,7 +6,7 @@ comments: true
 has_code: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
-tags: [Software, Game Jams]
+tags: [software, game-jams]
 preview-img:
   url: /img/blog/2012/10/minescape_screen.png
   alt: MineEscape

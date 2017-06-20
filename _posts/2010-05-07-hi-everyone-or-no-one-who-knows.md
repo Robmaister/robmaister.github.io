@@ -8,7 +8,7 @@ date: '2010-05-07 00:43:57 -0400'
 preview-img:
   url: /img/blog/2010/05/img_2465.jpg
   alt: Monitors
-tags: [Updates]
+tags: [updates]
 ---
 
 I thought I might as well make a blog with everything I've been doing

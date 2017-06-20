@@ -5,7 +5,7 @@ published: true
 comments: true
 title: VR for G3 enhancements
 date: '2015-10-23 14:17:20 -0400'
-tags: [Hardware, VR]
+tags: [hardware, vr]
 preview-img:
     url: /img/blog/2015/10/20151023_113508.jpg
     alt: VR for G3

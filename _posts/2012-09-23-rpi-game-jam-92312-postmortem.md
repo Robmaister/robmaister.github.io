@@ -5,7 +5,7 @@ published: true
 comments: true
 title: RPI Game Jam 9/23/12 Postmortem
 date: '2012-09-23 17:37:25 -0400'
-tags: [Software, Game Jams]
+tags: [software, game-jams]
 preview-img:
   url: /img/blog/2012/09/boxopolis_cover.png
   alt: Boxopolis Cover

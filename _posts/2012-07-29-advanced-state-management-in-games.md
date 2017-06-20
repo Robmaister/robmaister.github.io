@@ -5,7 +5,7 @@ published: true
 comments: true
 title: Advanced State Management in Games
 date: '2012-07-29 13:11:13 -0400'
-tags: [Software]
+tags: [software]
 ---
 
 In this blog post I'm going to describe the state management system I've built

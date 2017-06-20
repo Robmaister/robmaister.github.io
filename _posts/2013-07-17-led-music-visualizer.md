@@ -6,7 +6,7 @@ comments: true
 bg: bg3456.jpg
 title: LED Music Visualizer
 date: '2013-07-17 16:17:00 -0400'
-tags: [Hardware]
+tags: [hardware]
 preview-img:
   url: /img/blog/2013/07/IMG_3064.jpg
   alt: LED strips

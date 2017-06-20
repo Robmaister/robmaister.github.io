@@ -5,7 +5,7 @@ published: true
 comments: true
 title: Android programming with OpenGL ES 1.0
 date: '2010-12-20 01:41:32 -0500'
-tags: [Software]
+tags: [software]
 preview-img:
   url: /img/blog/2010/12/workingtextures.png
   alt: Working textures

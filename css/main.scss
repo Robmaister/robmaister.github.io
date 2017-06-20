@@ -287,6 +287,15 @@ footer {
     display: none;
 }
 
+#main-details a {
+    text-decoration: none;
+    color: $accent-color-medium;
+}
+
+#main-details a:hover {
+    color: $accent-color-dark;
+}
+
 #main-md {
     opacity: 1;
     width: 100%;

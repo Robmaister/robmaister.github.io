@@ -5,7 +5,7 @@ published: true
 comments: true
 title: What I've been working on...
 date: '2011-02-06 02:02:00 -0500'
-tags: [Software]
+tags: [software]
 preview-img:
     url: /img/blog/2011/02/cc-preview.jpg
     alt: Video Preview

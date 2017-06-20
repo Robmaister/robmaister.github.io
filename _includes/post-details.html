@@ -1,9 +1,22 @@
+{% assign tags_content = "" %}
+{% for post_tag in include.page.tags %}
+    {% assign tag = site.blog_tags | where: "slug", post_tag %}
+    {% if tag %}
+        {% assign tag = tag[0] %}
+        {% capture appended_tags_content %}{{ tags_content }}<a href="{{ tag.url | prepend: site.baseurl }}">{{ tag.title }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+        {% assign tags_content = appended_tags_content %}
+    {% else %}
+        {% capture appended_tags_content %}{{ tags_content }}{{ tag.title }}{% if forloop.last == false %}, {% endif %}{% endcapture %}
+        {% assign tags_content = appended_tags_content %}
+    {% endif %}
+{% endfor %}
+
 <div class="title-details">
 <span><i class="fa fa-lg fa-fw fa-clock-o"></i> {{ include.page.date | date: "%B %-d, %Y" }}</span>
 <span class="sep">&bull;</span>
-<span><i class="fa fa-lg fa-fw fa-comments-o"></i> <span class="disqus-comment-count" data-disqus-identifier="{{ include.page.id }}">0 Comments</span></span>
+<span><i class="fa fa-lg fa-fw fa-comments-o"></i> <a href="#disqus_thread" class="disqus-comment-count" data-disqus-identifier="{{ include.page.id }}">0 Comments</a></span>
 {% if include.tags %}
 <span class="sep">&bull;</span>
-<span><i class="fa fa-lg fa-fw fa-tags"></i> {% for post_tag in include.page.tags %}{{ post_tag }} {% if forloop.last == false %}, {% endif %}{% endfor %}</span>
+<span><i class="fa fa-lg fa-fw fa-tags"></i> {{ tags_content }}</span>
 {% endif %}
 </div>

@@ -5,7 +5,7 @@ published: true
 comments: true
 title: More stuff I've been working on
 date: '2011-03-06 02:24:09 -0500'
-tags: [Software]
+tags: [software]
 preview-img:
     url: /img/blog/2011/03/cc-editor-preview.jpg
     alt: Video Preview

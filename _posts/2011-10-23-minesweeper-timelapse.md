@@ -5,7 +5,7 @@ published: true
 comments: true
 title: Minesweeper timelapse
 date: '2011-10-23 17:09:06 -0400'
-tags: [Software]
+tags: [software]
 preview-img:
     url: /img/blog/2011/10/minesweeper-preview.jpg
     alt: Video Preview

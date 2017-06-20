@@ -22,6 +22,11 @@ sass:
 paginate: 5
 paginate_path: "/blog/page/:num/"
 
+collections:
+  blog_tags:
+    output: true
+    permalink: /blog/tag/:name/
+
 social-media-links:
   - site: Github
     icon: fa-github
@@ -42,3 +47,9 @@ defaults:
       path: ""
     values:
       bg: bg-default.jpg
+  -
+    scope:
+      path: ""
+      type: blog_tags
+    values:
+      layout: blog_tag

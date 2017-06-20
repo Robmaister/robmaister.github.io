@@ -5,7 +5,7 @@ published: true
 comments: true
 title: The Last 6 Months
 date: '2013-05-22 21:52:58 -0400'
-tags: [Software]
+tags: [software]
 preview-img:
   url: /img/blog/2013/05/TopHat-2013-05-20-22.26.31.7624.png
   alt: TopHat terrain

@@ -5,7 +5,7 @@ published: true
 comments: true
 title: Facepunch Single Player Map - part 1
 date: '2010-06-26 05:29:45 -0400'
-tags: [Level Design, Source Engine]
+tags: [level-design, source-engine]
 preview-img:
     url: /img/blog/2010/06/fp-sp-preview.jpg
     alt: Video Preview

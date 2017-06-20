@@ -5,7 +5,7 @@ published: true
 comments: true
 title: Dynamic Asset Management in TopHat
 date: '2013-08-06 01:12:51 -0400'
-tags: [Software]
+tags: [software]
 preview-img:
     url: /img/blog/2013/08/asset-mgmt-preview.jpg
     alt: Video Preview
