@@ -23,7 +23,7 @@ optimization to do, but the simplest solution is to simply use less cascades
 and smaller shadow maps. In this post I'm going to discuss the process I went
 through in implementing CSMs, and any issues I ran into along the way.
 
-### Why CSMs?
+# Why CSMs?
 
 Since the world is procedurally generated, lightmapping would add a rediculous
 amount of load time if I wanted it to look even halfway decent. It would also
@@ -34,12 +34,12 @@ as 1m^3 should have shadows). After doing some research, I came across
 Cascaded Shadow Maps which essentially fits all of my requirements and decided
 I wanted to implement it.
 
-### Gathering Resources
+# Gathering Resources
 My primary reference was the cascaded shadow map sample in
 [NVIDIA's OpenGL SDK 10.6][2]. In addition, I kept a copy of the
 [NVIDIA paper][3] and read through the [MSDN article on CSMs][4].
 
-### Porting to C#
+# Porting to C\#
 
 My game is written in C#, and NVIDIA's sample was (naturally) written in C++.
 Normally, porting code between languages isn't too hard so long as you
@@ -58,7 +58,7 @@ tried running the game with shadows, this was the result:
 
 ![First attempt][5]
 
-### Fixing the Issues
+# Fixing the Issues
 
 So after a nice break, I came back to the computer and tried to debug the
 shadows. The first thing I did was shade all the geometry based on which
@@ -85,7 +85,7 @@ matrix that scales the point into [0; 1] range for easier texture lookup.
 
 {% include embed/video.html url='http://www.youtube.com/embed/1utakCjC7Xc' %}
 
-### Remaining bugs
+# Remaining bugs
 
 The only remaining bug that has an impact on shadow map quality is finding the
 right Z bounds on the light's orthographic projection matrix. Either part of
@@ -100,7 +100,7 @@ Also, in testing with lower quality shadow maps and less splits, I'm getting a
 pretty bad amount of shadow acne, something I'll look into and tweak some
 values for.
 
-### Looking Forward
+# Looking Forward
 
 The first thing I want to change about my shadow maps in the future is the way
 they're filtered. Perhaps the option to use [PCSS][7] on higher-end machines,

@@ -2,21 +2,24 @@
 ---
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
-$bg-base-color-fb: #fff;
-$bg-base-color: rgba(255, 255, 255, 0.85);
+$bg-base-color: #fff;
+$bg-base-color-transparent: rgba(255, 255, 255, 0.85);
 
 $accent-color-dark: #990000;
 $accent-color-medium: #d90000;
 $accent-color-light: #ff6666;
 
 $primary-color-dark: #222;
+$primary-color-dark-transparent: rgba(34, 34, 34, 0.9);
 $primary-color-medium: #999;
+$primary-color-light: #ddd;
 
 $font-primary: 'Julius Sans One', sans-serif;
 $font-secondary: 'Archivo Narrow', sans-serif;
 $font-body: 'Source Sans Pro', sans-serif;
 
 $body-border-radius: 15px;
+$content-border-radius: 10px;
 
 html {
     color: $primary-color-dark;
@@ -137,8 +140,8 @@ h2, h3, h4, h5, h6 {
 }
 
 .header-container {
-    background-color: #222;
-    background-color: rgba(34, 34, 34, 0.9);
+    background-color: $primary-color-dark;
+    background-color: $primary-color-dark-transparent;
 
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -171,7 +174,7 @@ nav ul li a {
     font-size: 1.2em;
     line-height: 3em;
     text-decoration: none;
-    color: #ddd;
+    color: $primary-color-light;
 }
 
 nav ul li a:hover {
@@ -189,11 +192,11 @@ nav ul li a.selected:hover {
 }
 
 footer {
-    background-color: $bg-base-color-fb;
     background-color: $bg-base-color;
+    background-color: $bg-base-color-transparent;
 
     text-align: center;
-    color: #222;
+    color: $primary-color-dark;
 
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
@@ -201,9 +204,13 @@ footer {
             transition: all 0.5s ease-in-out;
 }
 
+.social-media-container {
+    cursor: default;
+}
+
 #main-container {
-    background-color: $bg-base-color-fb;
     background-color: $bg-base-color;
+    background-color: $bg-base-color-transparent;
 
     max-width: 100%;
     height: auto;
@@ -216,7 +223,7 @@ footer {
 
 #main {
     display: block;
-    color: #222;
+    color: $primary-color-dark;
     padding: 1em;
     overflow: hidden;
     
@@ -310,7 +317,8 @@ footer {
     display: block;
 }
 
-#main-md h1 {
+#main-md h1,
+.share-head {
     margin: 1.5em 0 1em 0;
     color: $accent-color-medium;
 }
@@ -339,10 +347,6 @@ footer {
     clear: both;
 }
 
-.post-preview-list div.post {
-    padding: 0.25em 4px;
-}
-
 .post-preview-list div.post:hover {
     background-color: #6e6e6e;
     background-color: rgba(110, 110, 110, 0.2);
@@ -353,6 +357,8 @@ footer {
     width: 100%;
     color: #222;
     text-decoration: none;
+    box-sizing: border-box;
+    padding: 0.25em;
 }
 
 .post-preview-list .title-line {
@@ -406,6 +412,44 @@ footer {
 
 .post-preview-list hr {
     margin: 0 0;
+}
+
+.post-preview-pagination {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 2em;
+    cursor: default;
+}
+
+.pagination {
+    display: inline-block;
+    width: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: $primary-color-light;
+    background-color: #555;
+    background-color: rgba(85, 85, 85, 0.9);
+    border-radius: $content-border-radius;
+}
+
+.pagination:hover,
+.pagination.pagination-active:hover {
+    background-color: #666;
+    background-color: rgba(102, 102, 102, 0.9);
+}
+
+.pagination.pagination-active {
+    background-color: $primary-color-dark;
+    background-color: $primary-color-dark-transparent;
+}
+
+.pagination.pagination-arrow {
+    visibility: hidden;
+    margin: 0 0.5em;
+}
+
+.pagination.pagination-arrow.pagination-active {
+    visibility: visible;
 }
 
 table {
@@ -527,13 +571,13 @@ table {
     display: inline-block;
     text-decoration: none;
     margin: 0 0.5em;
-    color: #222;
+    color: $primary-color-dark;
     font-size: 1.5em;
 }
 
 .copyright {
     font-size: 0.75em;
-    color: #222;
+    color: $primary-color-dark;
 }
 
 /* ========================================================================
@@ -759,7 +803,7 @@ nav.loading ul li {
     }
     
     .header-container {
-        margin-top: 75px;
+        margin-top: 60px;
     }
 
     #sidebar {

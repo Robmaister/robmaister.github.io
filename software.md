@@ -7,4 +7,4 @@ Coming soon!
 
 # Recent Posts
 
-{% include post-preview.html tag="Software" limit=5 %}
+{% include post-preview.html filter-tag="Software" limit=5 %}

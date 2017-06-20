@@ -10,11 +10,17 @@ handles:
   twitter: robmaister
   facebook: robert.rouhani
 
-
 # Build settings
+gems: [jekyll-paginate]
 markdown: kramdown
 permalink: /blog/:categories/:year/:month/:day/:title/
 timezone: America/New_York
+
+sass:
+  style: compressed
+
+paginate: 5
+paginate_path: "/blog/page/:num/"
 
 social-media-links:
   - site: Github

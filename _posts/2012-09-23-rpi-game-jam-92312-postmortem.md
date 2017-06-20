@@ -25,7 +25,7 @@ the toys he needs to save the world. Before I start the actual postmortem, I'd
 like to mention that the entire source code (plus history) is available on
 [GitHub][2]
 
-### What Happened?
+# What Happened?
 
 We only took a half hour or so to come up with the basic idea and started
 dividing up work. Within an hour we had a list of art assets we needed to make
@@ -71,7 +71,7 @@ minute to spare, which I spent changing the window title.
 After that, we presented our game and got some very valuable feedback from the
 judges.
 
-### What Went Right?
+# What Went Right?
 
  - For starters, we finished the game. We didn't win any awards, but with only
    24 hours, making a finished game is a reward in itself.
@@ -81,7 +81,7 @@ judges.
    work in Python for the next jam, I'm going to get more comfortable with
    PyOpenGL and use that.
 
-### What Went Wrong?
+# What Went Wrong?
 
  - We ran out of time. What we had done by the end of the jam was what we
    should have had done by the morning. Ideally, the entire morning should
@@ -104,7 +104,7 @@ judges.
    clean up the edges. I ended up redoing some of the sprites completely, and
    that took up 1.5-2hrs that could have been better spent.
 
-### How Will I Fix My Mistakes?
+# How Will I Fix My Mistakes?
 
  - Push for an earlier first iteration of the game. Don't worry about doing
    things the right way, just make sure they're done. This is much easier to
@@ -124,7 +124,7 @@ judges.
 
 ![][6]
 
-### Worst Hack?
+# Worst Hack?
 
 Game jams happen so quickly that almost every entry has some level of hackery
 in the code. Anything from a harmless, bug-fixing magic number to lengthy,

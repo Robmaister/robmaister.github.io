@@ -25,7 +25,7 @@ As the video shows, the visualizer doesn't require much hardware knowledge. So
 long as you have the equipment to do some soldering (or at least a friend who
 does), this project is entirely viable.
 
-### Materials
+# Materials
 
  - 1x Arduino UNO - $20-$30
  - 1x [ShiftyVU shield][1] - $19.99
@@ -36,7 +36,7 @@ does), this project is entirely viable.
  - 1x 3.5mm stereo Y splitter - $3-$5
  - 1x 3.5mm stereo cable - $3-$5
 
-### Setup
+# Setup
 
 ![][6]
 
@@ -77,13 +77,13 @@ to read the audio in myself. As I explain in the video, the ShiftyVU does some
 filtering of the audio that doesn't work well with spectrum analysis, but is
 good enough to make something visually pleasing.
 
-### Source Code
+# Source Code
 
 [<i class="fa fa-github"></i> Github][9]{: .button}
 
 In case you glanced over the setup section.
 
-### Progress
+# Progress
 
 Here are some of the pictures I posted on Facebook and the videos I posted on
 Instagram as I was working on the project.

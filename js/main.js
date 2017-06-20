@@ -19,7 +19,8 @@ function select_active_link(active_url) {
     //specific link instead of just the first one.
     $("nav ul li a")
     .sort(function(a, b) {
-        return a.href.length < b.href.length;
+        return b.href.length - a.href.length ||
+            a.href.localeCompare(b.href);
     })
     .each(function() {
         if (active_url.startsWith(this.href)) {
@@ -123,7 +124,9 @@ function intercept_links(selector) {
 //On page load
 $(document).ready(function () {
 
-    history.replaceState({url: window.location.href}, document.title, window.location.href);
+    //Only replace 
+    if (document.referrer.split('/')[2] != location.hostname)
+        history.replaceState({url: window.location.href}, document.title, window.location.href);
 
     //select active link
     select_active_link(window.location.href);

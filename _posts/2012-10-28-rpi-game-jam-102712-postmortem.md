@@ -30,7 +30,7 @@ So now that I've got two of these RPI game dev club game jams under my belt,
 it's time to get that second postmortem done. The theme was **Surprise and
 Suspense**. I'm just going to dive right in...
 
-### What Happened?
+# What Happened?
 
 Like the previous game jam, we spent about an hour coming up with an idea.
 This time I decided to use C# and [OpenTK][5], a combination I'm much more
@@ -96,7 +96,7 @@ final game still had a handful of item placement bugs and dying would send you
 back to the first level instead of just the last level you were on, which we
 found out while presenting the game...
 
-### What Went Right?
+# What Went Right?
 
  - Execution. We thought of the idea and got something done within the 24
    hours with enough time to eat&#47;sleep. We were not rushing any features
@@ -117,7 +117,7 @@ found out while presenting the game...
    I spent on art was cleaning up the player sprite and making it look like
    his headlamp was emitting the light.
 
-### What Went Wrong?
+# What Went Wrong?
 
  - Like all game jam entries, there were features that we didn't have time to
    bring into the game. What went wrong here was that the main balancing
@@ -129,7 +129,7 @@ found out while presenting the game...
    was on. Some additional puzzle elements would have made the game a lot
    better.
 
-### How Will I Fix My Mistakes?
+# How Will I Fix My Mistakes?
 
  - Implement core mechanics earlier, then work on the polishing and other
    effects. That way we won't run into this issue of completely forgetting a
@@ -139,7 +139,7 @@ found out while presenting the game...
    might not have had as much polish (or a 4th level), but the game would
    have been a lot more interesting with this.
 
-### Worst Hack?
+# Worst Hack?
 Continuing with the organization of the previous postmortem, I'll post the
 worst hack in the game's source code. A lot of the hacking in this game was
 just making variables public to save some time in writing wrapper properties,

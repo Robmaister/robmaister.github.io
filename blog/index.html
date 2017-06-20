@@ -1,0 +1,54 @@
+---
+layout: page
+title: Blog
+comment-count: true
+sidebar:
+---
+
+{% if paginator.page == 1 %}
+
+I will occasionally post things here
+
+<h2>Blog posts</h2>
+{% else %}
+<h2>Blog Posts: Page {{ paginator.page }}</h2>
+{% endif %}
+
+<div class="post-preview-list">
+{% for post in paginator.posts %}
+    {% include post-preview.html page=post %}
+    <div class="divider">
+        <hr>
+    </div>
+{% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<div class="post-preview-pagination">
+    {% if paginator.previous_page %}
+    <a class="pagination pagination-arrow pagination-active" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&lt;</a>
+    {% else %}
+    <span class="pagination pagination-arrow">&lt;</span>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <span class="pagination pagination-number">{{ page }}</span>
+        {% elsif page == 1 %}
+            <a class="pagination pagination-number pagination-active" href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        {% else %}
+            <a class="pagination pagination-number pagination-active" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a class="pagination pagination-arrow pagination-active" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&gt;</a>
+    {% else %}
+    <span class="pagination pagination-arrow">&gt;</span>
+    {% endif %}
+</div>
+
+<div class="divider">
+    <hr>
+</div>
+{% endif %}
