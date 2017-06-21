@@ -17,12 +17,13 @@ positive values and it looked pretty cool so I snapped some screenshots of it.
 I'm not sure why everything above the textured areas are blue, but I'm
 guessing it has to do with transparency and the background color.
 
-![][1] | ![][2]
-![][3] | ![][4]
+
+[![][1]][1]{: data-lightbox="gallery"} | [![][2]][2]{: data-lightbox="gallery"}
+[![][3]][3]{: data-lightbox="gallery"} | [![][4]][4]{: data-lightbox="gallery"}
 
 And finally, here's the working multitexturing:
 
-![][5]
+[![][5]][5]{: data-lightbox="gallery"}
 
 [1]: /img/blog/2012/05/tophat-05-11-2012-11-06-10-3365-pm.png
 [2]: /img/blog/2012/05/tophat-05-11-2012-11-06-20-6521-pm.png

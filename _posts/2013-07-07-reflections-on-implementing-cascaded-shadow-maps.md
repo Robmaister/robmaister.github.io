@@ -13,7 +13,7 @@ preview-img:
 
 So I've spent the past few days implementing shadow mapping in TopHat.
 
-![Crytek Sponza model with 4096x4096 4-split CSMs, 3x3 Gaussian blurring with PCF.][1]
+[![][1]][1]{: data-lightbox="gallery"}
 
 It looks nice, doesn't it? Well with the settings I had on the screenshot, I
 was getting about 50fps on my desktop, which has an Intel i7-2600k and a
@@ -56,7 +56,7 @@ Besides that, there weren't really any issues in porting the code itself. I
 did end up doing some of the matrix math incorrectly, so the first time I
 tried running the game with shadows, this was the result:
 
-![First attempt][5]
+[![][5]][5]{: data-lightbox="gallery"}
 
 # Fixing the Issues
 
@@ -111,13 +111,13 @@ bugs and any additional work I do on shadow mapping.
 
 ------------------------------------------------------------------------------
 
-![][10] | ![][11] | ![][12]
+[![][10]][10]{: data-lightbox="gallery"} | [![][11]][11]{: data-lightbox="gallery"} | [![][12]][12]{: data-lightbox="gallery"}
 
-[1]:  /img/blog/2013/07/TopHat-2013-07-04-00.03.45.0008.png
+[1]:  /img/blog/2013/07/TopHat-2013-07-04-00.03.45.0008.png "Crytek Sponza model with 4096x4096 4-split CSMs, 3x3 Gaussian blurring with PCF"
 [2]:  https://developer.nvidia.com/nvidia-graphics-sdk-11
 [3]:  http://developer.download.nvidia.com/SDK/10.5/opengl/src/cascaded_shadow_maps/doc/cascaded_shadow_maps.pdf
 [4]:  http://msdn.microsoft.com/en-us/library/windows/desktop/ee416307(v=vs.85).aspx
-[5]:  /img/blog/2013/07/TopHat-2013-06-28-16.08.46.0823.png
+[5]:  /img/blog/2013/07/TopHat-2013-06-28-16.08.46.0823.png "First Attempt"
 [6]:  http://msdn.microsoft.com/en-us/library/windows/desktop/ee416324(v=vs.85).aspx#Peter_Panning
 [7]:  http://developer.download.nvidia.com/shaderlibrary/docs/shadow_PCSS.pdf
 [8]:  http://www.punkuser.net/vsm/

@@ -5,7 +5,7 @@ subtitle: Virtual Reality Developer
 sidebar: |
     ## Quick Links
      - [<i class="fa fa-fw fa-file-pdf-o"></i> Resume](/downloads/RobertRouhaniResume.pdf){: .button .ext-link}
-     - [<i class="fa fa-fw fa-briefcase"></i> Ilium VR](https://iliumvr.com/){: .button}
+     - [<i class="fa fa-fw fa-briefcase"></i> CISL](http://cisl.rpi.com/){: .button}
      - [<i class="fa fa-fw fa-code-fork"></i> Website Source](https://github.com/Robmaister/robmaister.github.io){: .button}
     {: .list-no-style}
 ---

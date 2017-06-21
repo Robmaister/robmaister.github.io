@@ -19,6 +19,6 @@ still considered impressive to most of the people there. This was the reason I
 probably got two night's worth of sleep over a week. There  isn't much more to
 say, so without further ado, a screenshot of said display:
 
-![Warner Theater in Erie, PA][1]
+[![][1]][1]{: data-lightbox="gallery"}
 
 [1]: /img/blog/2010/05/english_art_deco0000.jpg "Half-Life 2 Episode 2 level"

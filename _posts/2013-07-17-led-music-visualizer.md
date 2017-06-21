@@ -38,7 +38,7 @@ does), this project is entirely viable.
 
 # Setup
 
-![][6]
+[![][6]][6]{: data-lightbox="gallery"}
 
  1. Solder on the header pins that came with the ShiftyVU shield and fit on
     top of Arudino.
@@ -57,7 +57,7 @@ does), this project is entirely viable.
 	[Here's the Adafruit article on wiring this particular LED strip][7].
  6. Optionally, solder the JST SM plug to the input of the first strip. That
     way you can unplug the LEDs if it's ever necessary.
-	![The way I laid out my LEDs][8]
+	[![][8]][8]{: data-lightbox="gallery"}
  7. Plug in the power supply to the 2.1mm jack to screw terminal block
     converter. Attach a red wire to the + block and a black one to the -
 	block. The red wire can go directly to the +5V on the LEDs, but the black
@@ -70,7 +70,7 @@ does), this project is entirely viable.
     installation instructions, then upload it to your Arduino.
  10. Put on some music and stare!
  
-![][10]
+[![][10]][10]{: data-lightbox="gallery"}
 
 In the next version of this project, I'm planning on building a small circuit
 to read the audio in myself. As I explain in the video, the ShiftyVU does some
@@ -88,8 +88,11 @@ In case you glanced over the setup section.
 Here are some of the pictures I posted on Facebook and the videos I posted on
 Instagram as I was working on the project.
 
-![][11]
-![][12]
+[![][11]][11]{: data-lightbox="gallery"}
+
+
+[![][12]][12]{: data-lightbox="gallery"}
+
 
 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://instagram.com/p/br14-qL2tJ/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">dat VU meter #arduino #daftpunk</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A video posted by Robert Rouhani (@robertrouhani) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2013-07-12T23:52:54+00:00">Jul 12, 2013 at 4:52pm PDT</time></p></div></blockquote>
 <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
@@ -110,7 +113,7 @@ Instagram as I was working on the project.
 [5]:  http://www.adafruit.com/products/578
 [6]:  /img/blog/2013/07/IMG_3135.jpg
 [7]:  http://learn.adafruit.com/digital-led-strip/wiring
-[8]:  /img/blog/2013/07/IMG_3140.jpg
+[8]:  /img/blog/2013/07/IMG_3140.jpg "The way I laid out my LEDs"
 [9]:  https://github.com/Robmaister/LEDMusicVisualizer
 [10]: /img/blog/2013/07/IMG_3258.jpg
 [11]: /img/blog/2013/07/IMG_3064.jpg

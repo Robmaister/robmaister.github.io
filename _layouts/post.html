@@ -3,7 +3,7 @@ layout: default
 ---
 <h1 id="main-title">{{ page.title }}</h1>
 <div id="main-details">
-    {% include post-details.html page=page tags=true %}
+    {% include post-details.html page=page tags=true interactive=true %}
 </div>
 <hr />
 {% if page.sidebar %}<div id="sidebar">{{ page.sidebar | markdownify }}</div>{% endif %}

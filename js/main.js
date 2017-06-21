@@ -107,17 +107,18 @@ function intercept_links(selector) {
     $(selector).click(function(e) {
 
         //don't intercept external links or ones forced off
-        if (this.host == location.host && !$(this).hasClass("ext-link")) {
-            var url = $(this).prop('href');
-            history.pushState({url: url}, document.title, url);
-            load_new_page(url);
+        if (this.host != location.host || $(this).hasClass("ext-link") || $(this).attr("data-lightbox"))
+            return;
 
-            //clicking on a link should scroll to top
-            //browser forward/back maintain scrolling positions
-            window.scrollTo(0, 0);
+        var url = $(this).prop('href');
+        history.pushState({url: url}, document.title, url);
+        load_new_page(url);
 
-            e.preventDefault();
-        }
+        //clicking on a link should scroll to top
+        //browser forward/back maintain scrolling positions
+        window.scrollTo(0, 0);
+
+        e.preventDefault();
 	});
 }
 

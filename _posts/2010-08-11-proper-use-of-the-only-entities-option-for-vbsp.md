@@ -25,7 +25,8 @@ currently compiled map. Attempting to re-run VVIS or VRAD over it will return
 errors because of the way those tools work, something a little bit more
 complicated than I really want to go over in this guide.
 
-![An env_smokestack entity][1]
+[![][1]][1]{: data-lightbox="gallery"}
+
 So anyways, before you attempt this, make sure that the only things modified
 in your map are entities (excluding props with shadows enabled or light
 entities), because anything else will require another compile to update other
@@ -42,7 +43,8 @@ only thing that you can't do is change any brushwork, move brush-based
 entities, or deal with anything that is taken into consideration when VRAD
 calculates lighting. You can also modify outputs.
 
-![modifying some settings...][2]
+[![][2]][2]{: data-lightbox="gallery"}
+
 So now the only edits made to the map are entity based, so the rest of the
 compiled map will stay exactly as it has. Now all we need to do is configure
 our compilation correctly. Your compile menu should look like the image to the
@@ -51,7 +53,8 @@ game parameters. If you feel better using the expert compile menu, add
 `-onlyents` to the $bsp_exe command. You can also just choose the Only
 Entities configuration from the configuration drop down list.
 
-![Compile menu settings.][3]
+[![][3]][3]{: data-lightbox="gallery"}
+
 So now there should be a significantly shorter compile, but lighting will
 still stay intact, which is the real benefit to using this configuration
 because certain things like env_smokestacks won't look the same in a
@@ -64,7 +67,7 @@ seconds on VRAD this way. And that's with every compile. I spent at least
 less or increase the minimum particle size or just change some value slightly.
 I hope this helps you as much as it's helped me with my maps!
 
-![Hope you caught the sarcasm there...][4]
+[![][4]][4]{: data-lightbox="gallery"}
 
 [1]: /img/blog/2010/08/singleplayercontest_notop0026.jpg "The env_smokestack in question."
 [2]: /img/blog/2010/08/hammer1.jpg "Oh, this will look SO much better!"

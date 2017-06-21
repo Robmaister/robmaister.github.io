@@ -27,7 +27,8 @@ respectively. I spent a disproportionate amount of time on these projects,
 completing the *Art for Interactive Media* project in a matter of hours but
 spending several days on the *Intro to Game Design* one.
 
-![igd-final-screenshot][3]
+[![][3]][3]{: data-lightbox="gallery"}
+
 My *Intro to Game Design* project was a puzzle game with the primary mechanic
 of failed attempts acting as agents in the current attempt. The game stores
 all your keypresses (compressed by number of frames held in a run-length
@@ -51,7 +52,8 @@ two (or both) randomly selected words, of which mine were **Failure** and
 failure to succeed, and that your failed attempts propagated through the time
 that you spend solving the puzzle.
 
-![][4]
+[![][4]][4]{: data-lightbox="gallery"}
+
 My *Art for Interactive Media* project was a much smaller project in which I
 attempted to do pixel art. The game is very simple and was made in only a few
 hours. The point of it is to build a gingerbread house by clicking on tiles in
@@ -106,7 +108,7 @@ throughout the semester, but I've recently modified our terrain generation
 algorithm and started on road generation. Here's what the terrain looks like
 so far:
 
-![TopHat 2013-05-20 22.26.31.7624][7]
+[![][7]][7]{: data-lightbox="gallery"}
 
 ------------------------------------------------------------------------------
 

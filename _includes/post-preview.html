@@ -1,20 +1,22 @@
+{% if include.page %}
 <div class="post">
-    <a href="{{ include.page.url }}">
-    <div class="title-line">
-        <span class="title">{{ include.page.title }}</span>
-        {% include post-details.html page=include.page %}
-    </div>
-    
-    {% if include.page.preview-img %}
-    <div class="img-container">
-        <img src="{{ include.page.preview-img.url }}" alt="{{ include.page.preview-img.alt }}"></img>
-    </div>
-    {% else %}
-    <div class="img-container img-container-empty">
-        <i class="fa fa-3x fa-picture-o img-placeholder"></i>
-    </div>
-    {% endif %}
+    <a href="{{ include.page.url | prepend: site.baseurl }}">
+        <div class="title-line">
+            <span class="title">{{ include.page.title }}</span>
+            {% include post-details.html page=include.page %}
+        </div>
+        
+        {% if include.page.preview-img %}
+        <div class="img-container">
+            <img src="{{ include.page.preview-img.url }}" alt="{{ include.page.preview-img.alt }}"></img>
+        </div>
+        {% else %}
+        <div class="img-container img-container-empty">
+            <i class="fa fa-3x fa-picture-o img-placeholder"></i>
+        </div>
+        {% endif %}
 
-    <p>{{ include.page.excerpt | strip_html }}</p>
+        <p>{{ include.page.excerpt | strip_html }}</p>
     </a>
 </div>
+{% endif %}

@@ -34,7 +34,7 @@ to fix it up.
 
 # Materials
 
-![Materials][4]
+[![][4]][4]{: data-lightbox="gallery"}
 
 Your local fabric or crafts store should have everything you need. Here are
 the supplies you will need:
@@ -67,14 +67,14 @@ had around and borrowed a friend's Dremel. Whatever gets the job done!
 
 # Procedure
 
-![elastic strap][5]
+[![][5]][5]{: data-lightbox="gallery"}
 
 Start by cutting a piece of elastic to length. I put my headset on and
 measured the elastic from the left strap hole to about the back of my head
 and made a cut there.
     
- - ![thread and needle][6]
- - ![sewing][7]
+ - [![][6]][6]{: data-lightbox="gallery"}
+ - [![][7]][7]{: data-lightbox="gallery"}
  {: .img-grid}
     
 Thread the needle and start sewing the elastic on the headset like the picture
@@ -83,24 +83,24 @@ online for beginners. I used a cross stitch, but a running stitch would work
 just fine.
     
     
- - ![adjuster left][8]
- - ![left sew][9]
+ - [![][8]][8]{: data-lightbox="gallery"}
+ - [![][9]][9]{: data-lightbox="gallery"}
  {: .img-grid}
 
 Grab one of the strap adjusters and loop the elastic around it like the
 picture above. The instructions for my strap adjusters recommend stitching an
 X in the middle of the square, so I did just that. I used a running stitch
 here since I was running low on black thread.
-    
-![right strap][10]
+
+[![][10]][10]{: data-lightbox="gallery"}
 
 Measure out another length of elastic, this time from the right strap hole all
 the way to the back of the head and a little further, for adjustment. Then sew
 it to the headset like before. This time I ran out of black thread, so it's
 white on this half.
     
- - ![adjuster right][11]
- - ![seal it off][12]
+ - [![][11]][11]{: data-lightbox="gallery"}
+ - [![][12]][12]{: data-lightbox="gallery"}
  {: .img-grid}
 
 Loop this piece through the strap adjuster like the picture above and sew it
@@ -108,8 +108,8 @@ after folding it over itself. **I would recommend actually folding it over
 twice**, since the tab I made can actually slip through the adjuster without
 too much trouble. This is something I'm planning on fixing later.
 
- - ![dremel start][13]
- - ![filed down][14]
+ - [![][13]][13]{: data-lightbox="gallery"}
+ - [![][14]][14]{: data-lightbox="gallery"}
  {: .img-grid}
 
 Grab your Dremel (or other rotary tool) and start cutting away at the nose
@@ -117,15 +117,15 @@ hole. For me this was a long process of cutting part of it away, trying it on,
 seeing what needed more cutting, and repeating. Once you get it down to size
 use a round file to smooth it out.
 
-![dremel other parts][15]
+[![][15]][15]{: data-lightbox="gallery"}
 
 Dremel the other two pieces of your headset as well. Follow the same process
 as before until the whole headset feels good on your face. Then file all of
 it down and finish by sanding everything you cut to give you nice, smooth
 edges.
     
- - ![cut foam][16]
- - ![put groove in foam][17]
+ - [![][16]][16]{: data-lightbox="gallery"}
+ - [![][17]][17]{: data-lightbox="gallery"}
  {: .img-grid}
 
 Cut out a small piece of foam. I ended up using only half the amount of foam
@@ -135,7 +135,7 @@ realized that scissors worked way better for everything but the groove. With a
 well sized groove, the foam should stay on the headset without glue unless
 upside down.
 
-![assemble and glue][18]
+[![][18]][18]{: data-lightbox="gallery"}
 
 Take your foam pieces and assemble them. Apply some hot glue to the plastic
 edge of the headset and put the foam pieces in so that the inside of the
@@ -144,7 +144,7 @@ feels comfortable and blocks all the ambient light behind you.
     
 # Result
 
-![the final product][19]
+[![][19]][19]{: data-lightbox="gallery"}
 
 Here it is! Finally assembled and ready to go. This headset now provides a
 comfortable, hands-free experience.
@@ -164,7 +164,7 @@ shortly.
 
 # Remaining Issues
 
-![scratches][21]
+[![][21]][21]{: data-lightbox="gallery"}
 
   - While I was sanding down the nose hole, I accidentally got a few scratches
     into one of the lenses. Going to try and fix this with toothpaste or
@@ -178,21 +178,21 @@ shortly.
 [1]:  http://www.lg.com/us/mobile-phones/g3/vr
 [2]:  http://www.lg.com/us/mobile-phones/g3
 [3]:  https://en.wikipedia.org/wiki/Screen-door_effect
-[4]:  /img/blog/2015/10/20151005_130926.jpg
-[5]:  /img/blog/2015/10/20151005_135050.jpg
-[6]:  /img/blog/2015/10/20151005_135127.jpg
-[7]:  /img/blog/2015/10/20151005_141006.jpg
-[8]:  /img/blog/2015/10/20151005_144436.jpg
-[9]:  /img/blog/2015/10/20151005_150546.jpg
-[10]: /img/blog/2015/10/20151005_184804.jpg
-[11]: /img/blog/2015/10/20151005_184856.jpg
-[12]: /img/blog/2015/10/20151005_191053.jpg
-[13]: /img/blog/2015/10/20151021_132026_HDR.jpg
-[14]: /img/blog/2015/10/20151021_134245.jpg
-[15]: /img/blog/2015/10/20151021_142851.jpg
-[16]: /img/blog/2015/10/20151022_224320.jpg
-[17]: /img/blog/2015/10/20151022_225837.jpg
-[18]: /img/blog/2015/10/20151022_231537.jpg
-[19]: /img/blog/2015/10/20151023_113508.jpg
+[4]:  /img/blog/2015/10/20151005_130926.jpg "Materials"
+[5]:  /img/blog/2015/10/20151005_135050.jpg "Elastic Strap"
+[6]:  /img/blog/2015/10/20151005_135127.jpg "Thread and Needle"
+[7]:  /img/blog/2015/10/20151005_141006.jpg "Sewing"
+[8]:  /img/blog/2015/10/20151005_144436.jpg "Adjuster Left"
+[9]:  /img/blog/2015/10/20151005_150546.jpg "Left Sew"
+[10]: /img/blog/2015/10/20151005_184804.jpg "Right Strap"
+[11]: /img/blog/2015/10/20151005_184856.jpg "Adjuster Right"
+[12]: /img/blog/2015/10/20151005_191053.jpg "Seal it Off"
+[13]: /img/blog/2015/10/20151021_132026_HDR.jpg "Dremel Start"
+[14]: /img/blog/2015/10/20151021_134245.jpg "Filed Down"
+[15]: /img/blog/2015/10/20151021_142851.jpg "Dremel Other Parts"
+[16]: /img/blog/2015/10/20151022_224320.jpg "Cut Foam"
+[17]: /img/blog/2015/10/20151022_225837.jpg "Putting a Groove in the Foam"
+[18]: /img/blog/2015/10/20151022_231537.jpg "Assemble and Glue Together"
+[19]: /img/blog/2015/10/20151023_113508.jpg "The Final Product"
 [20]: http://erl.wp.rpi.edu/
-[21]: /img/blog/2015/10/20151022_223643.jpg
+[21]: /img/blog/2015/10/20151022_223643.jpg "Remaining Issue: Scratches"
