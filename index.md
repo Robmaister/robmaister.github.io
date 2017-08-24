@@ -16,10 +16,11 @@ Hey there, I'm a computer scientist and game developer with a passion for
 virtual reality. I love learning, rapid prototyping, and finding creative
 solutions to hard problems.
 
-I am a Senior Research Specialist at [CISL](http://cisl.rpi.edu/), a research
-lab that is a collaboration between RPI and IBM. We focus primarily on
-creating experiences that are both cognitive and immersive, using Watson APIs
-and the wonderful facilities at [EMPAC](http://empac.rpi.edu/).
+I am a Senior Research Specialist at [CISL](http://cisl.rpi.edu/), a
+collaboration between RPI and IBM in the form of a research lab. We focus
+primarily on creating experiences that are both cognitive and immersive,
+using Watson APIs and the wonderful facilities at
+[EMPAC](http://empac.rpi.edu/).
 
 Previously, I was a cofounder and the CTO of [Ilium VR](https://iliumvr.com/),
 a startup building realistic rifles for immersive VR first person shooter
