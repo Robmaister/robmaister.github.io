@@ -3,18 +3,23 @@ layout: post
 status: publish
 published: true
 comments: true
+has_code: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
-tags: [Software, Game Jams]
+tags: [software, game-jams]
 preview-img:
   url: /img/blog/2012/10/minescape_screen.png
   alt: MineEscape
+sidebar: |
+    ## Download
+    - [<i class="fa fa-download"></i> Binary](https://github.com/Robmaister/RPI-Game-Jam-10-27-12/downloads){: .button}
+    - [<i class="fa fa-code"></i> Source](https://github.com/Robmaister/RPI-Game-Jam-10-27-12){: .button}
+    {: .list-no-style}
 ---
 
 **MineEscape** is our entry for the RPI game dev club's game jam on 10/27/2012.
 
-[<i class="fa fa-download"></i> Binary][1]{:class="button"}
-[<i class="fa fa-code"></i> Source][2]{:class="button"}
+
 
 Requires OpenAL. If the game crashes at the very beginning, this is probably
 the issue. [Download it here][3].
@@ -25,7 +30,7 @@ So now that I've got two of these RPI game dev club game jams under my belt,
 it's time to get that second postmortem done. The theme was **Surprise and
 Suspense**. I'm just going to dive right in...
 
-### What Happened?
+# What Happened?
 
 Like the previous game jam, we spent about an hour coming up with an idea.
 This time I decided to use C# and [OpenTK][5], a combination I'm much more
@@ -91,7 +96,7 @@ final game still had a handful of item placement bugs and dying would send you
 back to the first level instead of just the last level you were on, which we
 found out while presenting the game...
 
-### What Went Right?
+# What Went Right?
 
  - Execution. We thought of the idea and got something done within the 24
    hours with enough time to eat&#47;sleep. We were not rushing any features
@@ -112,7 +117,7 @@ found out while presenting the game...
    I spent on art was cleaning up the player sprite and making it look like
    his headlamp was emitting the light.
 
-### What Went Wrong?
+# What Went Wrong?
 
  - Like all game jam entries, there were features that we didn't have time to
    bring into the game. What went wrong here was that the main balancing
@@ -124,7 +129,7 @@ found out while presenting the game...
    was on. Some additional puzzle elements would have made the game a lot
    better.
 
-### How Will I Fix My Mistakes?
+# How Will I Fix My Mistakes?
 
  - Implement core mechanics earlier, then work on the polishing and other
    effects. That way we won't run into this issue of completely forgetting a
@@ -134,7 +139,7 @@ found out while presenting the game...
    might not have had as much polish (or a 4th level), but the game would
    have been a lot more interesting with this.
 
-### Worst Hack?
+# Worst Hack?
 Continuing with the organization of the previous postmortem, I'll post the
 worst hack in the game's source code. A lot of the hacking in this game was
 just making variables public to save some time in writing wrapper properties,
@@ -146,7 +151,7 @@ wrote a basic state manager really early on that kept track of a state stack
 I got the game to restart after winning was by spawning a main menu state
 under the next menu after the main menu was popped off the stack:
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 startMenu.OnPopped +=
 	(s, e) =>
 	{
@@ -164,7 +169,7 @@ clearing the entire stack knowing that the method immediately after update
 would check for an empty stack and exit the game, giving it no time to
 actually push the new stack on.
 
-{% highlight csharp %}
+{% highlight csharp linenos %}
 else if (action.clearing)
 {
 	while (stack.Count > 0)

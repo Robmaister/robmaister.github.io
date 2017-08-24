@@ -2,19 +2,6 @@
 layout: page
 title: Level Design - Source Engine
 bg: jp_diner_port0037.jpg
-nav:
-  - text: Back
-    icon: fa-arrow-left
-    url: /
-  - text: Source Engine
-    icon: fa-
-    url: /level-design/source/
-  - text: Unity 3D
-    icon: fa-
-    url: /level-design/unity-3d/
-  - text: Unreal Engine 4
-    icon: fa-
-    url: /level-design/unreal-engine-4/
 ---
 
 These screenshots are all what I'm able to find online currently. A lot of my

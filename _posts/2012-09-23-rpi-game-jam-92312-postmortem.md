@@ -5,7 +5,7 @@ published: true
 comments: true
 title: RPI Game Jam 9/23/12 Postmortem
 date: '2012-09-23 17:37:25 -0400'
-tags: [Software, Game Jams]
+tags: [software, game-jams]
 preview-img:
   url: /img/blog/2012/09/boxopolis_cover.png
   alt: Boxopolis Cover
@@ -25,7 +25,7 @@ the toys he needs to save the world. Before I start the actual postmortem, I'd
 like to mention that the entire source code (plus history) is available on
 [GitHub][2]
 
-### What Happened?
+# What Happened?
 
 We only took a half hour or so to come up with the basic idea and started
 dividing up work. Within an hour we had a list of art assets we needed to make
@@ -71,7 +71,7 @@ minute to spare, which I spent changing the window title.
 After that, we presented our game and got some very valuable feedback from the
 judges.
 
-### What Went Right?
+# What Went Right?
 
  - For starters, we finished the game. We didn't win any awards, but with only
    24 hours, making a finished game is a reward in itself.
@@ -81,7 +81,7 @@ judges.
    work in Python for the next jam, I'm going to get more comfortable with
    PyOpenGL and use that.
 
-### What Went Wrong?
+# What Went Wrong?
 
  - We ran out of time. What we had done by the end of the jam was what we
    should have had done by the morning. Ideally, the entire morning should
@@ -104,7 +104,7 @@ judges.
    clean up the edges. I ended up redoing some of the sprites completely, and
    that took up 1.5-2hrs that could have been better spent.
 
-### How Will I Fix My Mistakes?
+# How Will I Fix My Mistakes?
 
  - Push for an earlier first iteration of the game. Don't worry about doing
    things the right way, just make sure they're done. This is much easier to
@@ -124,7 +124,7 @@ judges.
 
 ![][6]
 
-### Worst Hack?
+# Worst Hack?
 
 Game jams happen so quickly that almost every entry has some level of hackery
 in the code. Anything from a harmless, bug-fixing magic number to lengthy,
@@ -141,7 +141,7 @@ again and the game was reset to the title menu. The solution? Pass a lambda
 function to player, player stores it and invokes it whenever it collides with
 an obstacle or goal object.
 
-{% highlight python %}
+{% highlight python linenos %}
 def collide_obstacle(obstacle):
     global levelTime, goal_obstacles, pickup_sound, hurt_sound
     key = pygame.key.get_pressed()
@@ -156,11 +156,11 @@ def collide_obstacle(obstacle):
         hurt_sound.play()
 {% endhighlight %}
 
-{% highlight python %}
+{% highlight python linenos %}
 player = Player((32, 32), 1, lambda o: collide_obstacle(o))
 {% endhighlight %}
 
-{% highlight python %}
+{% highlight python linenos %}
 class Player(pygame.sprite.Sprite):
     def __init__(self, (x, y), speed, collide_lambda, fps=10):
         self.collide_obstacle = collide_lambda

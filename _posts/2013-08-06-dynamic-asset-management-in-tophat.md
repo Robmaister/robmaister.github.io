@@ -5,7 +5,10 @@ published: true
 comments: true
 title: Dynamic Asset Management in TopHat
 date: '2013-08-06 01:12:51 -0400'
-tags: [Software]
+tags: [software]
+preview-img:
+    url: /img/blog/2013/08/asset-mgmt-preview.jpg
+    alt: Video Preview
 ---
 
 Small update, I made a YouTube video showing off the ability to keep assets
@@ -14,4 +17,4 @@ explain the changes as I made them similar to how Wolfire makes their update
 videos for Overgrowth. I got a lot of positive feedback about it, so I'm
 probably going to continue this style of video for all future updates.
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/Zb4UyoAdbWg" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+{% include embed/video.html url='https://www.youtube.com/embed/Zb4UyoAdbWg' %}

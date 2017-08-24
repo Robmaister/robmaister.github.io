@@ -1,0 +1,8 @@
+<footer class="clearfix">
+    <span class="social-media-container">
+    {% for l in site.social-media-links %}
+        <a class="social-media-link" href="{{ l.url }}" title="{{ l.site }}"><i class="fa fa-fw {{ l.icon }}"></i></a>
+    {% endfor %}
+    </span>
+    <p class="copyright">Copyright (c) 2015-2017 Robert Rouhani</p>
+</footer>

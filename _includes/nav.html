@@ -1,0 +1,9 @@
+<div class="header-container">
+    <header class="clearfix">
+        <nav>
+            <ul>
+            {% for n in layout.nav %}<li><a href="{{ n.url }}">{{ n.text }}</a></li>{% endfor %}
+            </ul>
+        </nav>
+    </header>
+</div>

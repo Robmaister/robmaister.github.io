@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+{{ content }}
+
+<h2>Blog Posts by Tag</h2>
+
+{% if site.tags[page.slug] %}
+<div class="post-preview-list">
+    {% for post in site.tags[page.slug] %}
+        {% include post-preview.html page=post %}
+        <div class="divider">
+            <hr>
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<p style="text-align: center;">Oops! There's nothing here yet...</p>
+{% endif %}
+

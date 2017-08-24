@@ -1,32 +1,22 @@
-<ul class="post-preview-list">
-    {% for post in site.posts %}
-        {% if include.filter-tag == nil or post.tags contains include.filter-tag %}
-            <li class="post">
-                <a href="{{ post.url }}">
-                <div class="title-line">
-                    <span>{{ post.title }}</span>
-                    <span>&bull;</span>
-                    {% include post-details.html page=post %}
-                </div>
-                
-                <div class="img-container">
-                {% if post.preview-img %}
-                    <img src="{{ post.preview-img.url }}" alt="{{ post.preview-img.alt }}"></img>
-                {% else %}
-                    <i class="fa fa-3x fa-picture-o img-placeholder"></i>
-                {% endif %}
-                </div>
-            
-                <p>{{ post.excerpt | strip_html }}</p>
-                </a>
-            </li>
+{% if include.page %}
+<div class="post">
+    <a href="{{ include.page.url | prepend: site.baseurl }}">
+        <div class="title-line">
+            <span class="title">{{ include.page.title }}</span>
+            {% include post-details.html page=include.page %}
+        </div>
         
-            {% if forloop.last != true %}
-            <li class="divider">
-            <hr>
-            </li>
-            {% endif %}
-        
+        {% if include.page.preview-img %}
+        <div class="img-container">
+            <img src="{{ include.page.preview-img.url }}" alt="{{ include.page.preview-img.alt }}"></img>
+        </div>
+        {% else %}
+        <div class="img-container img-container-empty">
+            <i class="fa fa-3x fa-picture-o img-placeholder"></i>
+        </div>
         {% endif %}
-    {% endfor %}
-</ul>
+
+        <p>{{ include.page.excerpt | strip_html }}</p>
+    </a>
+</div>
+{% endif %}

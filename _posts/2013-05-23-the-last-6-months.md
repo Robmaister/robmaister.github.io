@@ -5,7 +5,7 @@ published: true
 comments: true
 title: The Last 6 Months
 date: '2013-05-22 21:52:58 -0400'
-tags: [Software]
+tags: [software]
 preview-img:
   url: /img/blog/2013/05/TopHat-2013-05-20-22.26.31.7624.png
   alt: TopHat terrain
@@ -27,7 +27,8 @@ respectively. I spent a disproportionate amount of time on these projects,
 completing the *Art for Interactive Media* project in a matter of hours but
 spending several days on the *Intro to Game Design* one.
 
-![igd-final-screenshot][3]
+[![][3]][3]{: data-lightbox="gallery"}
+
 My *Intro to Game Design* project was a puzzle game with the primary mechanic
 of failed attempts acting as agents in the current attempt. The game stores
 all your keypresses (compressed by number of frames held in a run-length
@@ -51,7 +52,8 @@ two (or both) randomly selected words, of which mine were **Failure** and
 failure to succeed, and that your failed attempts propagated through the time
 that you spend solving the puzzle.
 
-![][4]
+[![][4]][4]{: data-lightbox="gallery"}
+
 My *Art for Interactive Media* project was a much smaller project in which I
 attempted to do pixel art. The game is very simple and was made in only a few
 hours. The point of it is to build a gingerbread house by clicking on tiles in
@@ -81,7 +83,7 @@ On the graphics side, about 6 months ago I did a lot of work abstracting
 rendering and finally wrote code that controls the directional light and lets
 you set multiple lights. Here's a video of that functionality:
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/IQIbuOjuW98" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+{% include embed/video.html url='http://www.youtube.com/embed/IQIbuOjuW98' %}
 
 Shortly after that, I did some benchmarking, as the game was a bit slow on my
 laptop, and found out we were vertex processor bound with the terrain alone.
@@ -98,7 +100,7 @@ quadtree level, using a static 33x33 grid would be a much cleaner solution if
 we have vertex texture fetch support. Here's a video of that algorithm in
 action:
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/qWBhC_Mch9M" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+{% include embed/video.html url='http://www.youtube.com/embed/qWBhC_Mch9M' %}
 
 Most of the work I did over break was networking and other backend stuff that
 doesn't have much to show off. There wasn't a whole lot of work on the game
@@ -106,7 +108,7 @@ throughout the semester, but I've recently modified our terrain generation
 algorithm and started on road generation. Here's what the terrain looks like
 so far:
 
-![TopHat 2013-05-20 22.26.31.7624][7]
+[![][7]][7]{: data-lightbox="gallery"}
 
 ------------------------------------------------------------------------------
 
