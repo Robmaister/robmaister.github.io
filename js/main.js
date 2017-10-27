@@ -49,6 +49,17 @@ function load_new_page(url) {
             //data to jQuery object once
             var jData = $(data);
 
+            //swap backgrounds
+            var new_bg = data.match(/body style=\"(.*?)\"/)[1];
+            if ($("body").attr("style") != new_bg) {
+                var new_bg_path = new_bg.match(/background-image: url\((.*?)\)/)[1];
+                var new_bg_img = new Image();
+                new_bg_img.onload = function() {
+                    $("body").attr("style", new_bg);
+                };
+                new_bg_img.src = new_bg_path;
+            }
+
             //check for DISQUS on new page
             var shouldResetDisqus = false;
             var newDisqusJsBlock = jData.find("script#disqus-js");
@@ -76,12 +87,6 @@ function load_new_page(url) {
                         this.page.url = newDisqusUrl;
                     }
                 });
-            }
-
-            //swap backgrounds
-            var new_bg = data.match(/body style=\"(.*?)\"/)[1];
-            if ($("body").attr("style") != new_bg) {
-                $("body").attr("style", new_bg);
             }
             
             //swap titles

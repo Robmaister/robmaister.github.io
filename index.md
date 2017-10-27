@@ -1,5 +1,6 @@
 ---
 layout: page
+bg: bg-index-min.jpg
 title: Robert Rouhani
 subtitle: Virtual Reality Developer
 sidebar: |

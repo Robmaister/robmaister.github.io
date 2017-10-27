@@ -46,7 +46,7 @@ defaults:
     scope:
       path: ""
     values:
-      bg: bg-default.jpg
+      bg: bg-default-min.jpg
   -
     scope:
       path: ""

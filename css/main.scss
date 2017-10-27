@@ -114,16 +114,23 @@ body {
     font: 16px/24px $font-body;
 
     background-color: #000;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 50% 50%;
+    background-size: auto 100vh;
+    background-attachment: scroll;
+    background-position: top center;
+    background-repeat: no-repeat;
 
-    min-height: 100%;
+    min-width: 100%;
 
     -webkit-transition: background 0.5s ease-in-out;
        -moz-transition: background 0.5s ease-in-out;
          -o-transition: background 0.5s ease-in-out;
             transition: background 0.5s ease-in-out;
+}
+
+@media screen and (orientation:landscape) {
+    body {
+        background-size: 100vw auto;
+    }
 }
 
 h1 {
@@ -712,6 +719,12 @@ nav.loading ul li {
     /* Allows full-with box in mobile to fit to content length on desktop */
     html {
         width: auto;
+    }
+
+    body {
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
     }
    
     .header-container {
