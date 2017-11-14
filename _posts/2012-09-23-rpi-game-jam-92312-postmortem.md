@@ -122,7 +122,7 @@ judges.
    perfectionists if we want to meet deadlines, so I should also make a
    conscious effort to try and let go of the finer details.
 
-![][6]
+[![][6]][6]{: data-lightbox="gallery"}
 
 # Worst Hack?
 

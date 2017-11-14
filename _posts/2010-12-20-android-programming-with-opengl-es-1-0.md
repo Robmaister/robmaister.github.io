@@ -11,7 +11,7 @@ preview-img:
   alt: Working textures
 ---
 
-![Android Emulator][1]
+[![Android Emulator][1]][1]{: data-lightbox="gallery"}
 So I've dived right into OpenGL on the Android platform with a few of my friends. Currently we've got the following working:
 
  - fullscreen

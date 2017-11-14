@@ -24,7 +24,7 @@ sidebar: |
 Requires OpenAL. If the game crashes at the very beginning, this is probably
 the issue. [Download it here][3].
 
-![][4]
+[![][4]][4]{: data-lightbox="gallery"}
 
 So now that I've got two of these RPI game dev club game jams under my belt,
 it's time to get that second postmortem done. The theme was **Surprise and
@@ -76,7 +76,8 @@ closer to the surface.
 Before I went to bed that night I also added all of the menus and polished
 the transitions with some nice fading effects.
 
-![][7]
+[![][7]][7]{: data-lightbox="gallery"}
+
 The next morning I woke up at about 9:15am and walked over to Sage 2510 (where
 the game jam was taking place) and continued working on the menus and
 polishing the game a bit until my teammates arrived. When that happened I
