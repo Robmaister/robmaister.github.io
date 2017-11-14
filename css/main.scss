@@ -120,13 +120,9 @@ body {
     background-repeat: no-repeat;
 
     min-width: 100%;
-
-    -webkit-transition: background 0.5s ease-in-out;
-       -moz-transition: background 0.5s ease-in-out;
-         -o-transition: background 0.5s ease-in-out;
-            transition: background 0.5s ease-in-out;
 }
 
+//Hack for a viewport-based "cover" mode
 @media screen and (orientation:landscape) {
     body {
         background-size: 100vw auto;
@@ -267,7 +263,12 @@ footer {
 }
 
 #sidebar ul li {
-    display: inline-block;
+    display: block;
+}
+
+#sidebar .button {
+    width: 100%;
+    text-align: center;
 }
 
 #main-details {
@@ -725,6 +726,11 @@ nav.loading ul li {
         background-size: cover;
         background-attachment: fixed;
         background-position: center center;
+
+        -webkit-transition: background 0.5s ease-in-out;
+           -moz-transition: background 0.5s ease-in-out;
+             -o-transition: background 0.5s ease-in-out;
+                transition: background 0.5s ease-in-out;
     }
    
     .header-container {
@@ -767,12 +773,9 @@ nav.loading ul li {
         border-left: 1px solid $primary-color-medium;
     }
 
-    #sidebar ul li {
-        display: block;
-    }
-
     #sidebar .button {
         width: 100%;
+        text-align: left;
     }
 
     #main-details span {
