@@ -6,8 +6,8 @@
 
 // Makes sure there are no selected nav bar links
 function clear_selected_links() {
-    $("nav ul li a").each(function() {
-        $(this).removeClass("selected");
+    $("nav ul li").each(function() {
+        $(this).removeClass("active");
     });
 }
 
@@ -24,7 +24,7 @@ function select_active_link(active_url) {
     })
     .each(function() {
         if (active_url.startsWith(this.href)) {
-            $(this).addClass("selected");
+            $(this).parent("li").addClass("active");
             return false;
         }
     });
@@ -77,6 +77,7 @@ function load_new_page(url) {
 
             //swap main content
             $("#main").html(jData.find("#main>*"));
+            $("#breadcrumbs").html(jData.find("#breadcrumbs>*"));
             
             //Reset DISQUS after reload
             if (shouldResetDisqus) {
@@ -94,6 +95,7 @@ function load_new_page(url) {
             
             //intercept new links
             intercept_links("#main a");
+            intercept_links("#breadcrumbs a");
             
             //transition back after a short wait
             setTimeout(function(){
@@ -110,20 +112,27 @@ function load_new_page(url) {
 // Intercept links for history.js
 function intercept_links(selector) {
     $(selector).click(function(e) {
+        var url = $(this).prop('href');
 
         //don't intercept external links or ones forced off
-        if (this.host != location.host || $(this).hasClass("ext-link") || $(this).attr("data-lightbox"))
+        if (this.host != location.host || $(this).hasClass("ext-link") || $(this).attr("data-lightbox")) {
             return;
+        }
 
-        var url = $(this).prop('href');
+        //prevent link from clicking through
+        e.preventDefault();
+
+        //do nothing if the link is to the current page
+        if (url == window.location.href) {
+            return;
+        }
+
         history.pushState({url: url}, document.title, url);
         load_new_page(url);
 
         //clicking on a link should scroll to top
         //browser forward/back maintain scrolling positions
         window.scrollTo(0, 0);
-
-        e.preventDefault();
 	});
 }
 
@@ -138,7 +147,7 @@ $(document).ready(function () {
     select_active_link(window.location.href);
 
     //Handle links dynamically
-	intercept_links("nav ul li a");
+    intercept_links("header a");
     intercept_links("#main a");
 
     //Deal with history

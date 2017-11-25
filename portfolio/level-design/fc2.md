@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Level Design - Far Cry 2
+title: Far Cry 2
 bg: jp_diner_port0037.jpg
 ---
 

@@ -17,9 +17,11 @@ positive values and it looked pretty cool so I snapped some screenshots of it.
 I'm not sure why everything above the textured areas are blue, but I'm
 guessing it has to do with transparency and the background color.
 
-
-[![][1]][1]{: data-lightbox="gallery"} | [![][2]][2]{: data-lightbox="gallery"}
-[![][3]][3]{: data-lightbox="gallery"} | [![][4]][4]{: data-lightbox="gallery"}
+{: .content-grid .content-grid-half}
+ - [![][1]][1]{: data-lightbox="gallery"}
+ - [![][2]][2]{: data-lightbox="gallery"}
+ - [![][3]][3]{: data-lightbox="gallery"}
+ - [![][4]][4]{: data-lightbox="gallery"}
 
 And finally, here's the working multitexturing:
 

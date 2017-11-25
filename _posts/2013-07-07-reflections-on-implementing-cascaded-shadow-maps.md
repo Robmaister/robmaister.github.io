@@ -111,7 +111,10 @@ bugs and any additional work I do on shadow mapping.
 
 ------------------------------------------------------------------------------
 
-[![][10]][10]{: data-lightbox="gallery"} | [![][11]][11]{: data-lightbox="gallery"} | [![][12]][12]{: data-lightbox="gallery"}
+{: .content-grid .content-grid-third}
+ - [![][10]][10]{: data-lightbox="gallery"}
+ - [![][11]][11]{: data-lightbox="gallery"}
+ - [![][12]][12]{: data-lightbox="gallery"}
 
 [1]:  /img/blog/2013/07/TopHat-2013-07-04-00.03.45.0008.png "Crytek Sponza model with 4096x4096 4-split CSMs, 3x3 Gaussian blurring with PCF"
 [2]:  https://developer.nvidia.com/nvidia-graphics-sdk-11

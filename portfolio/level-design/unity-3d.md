@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Level Design - Unity 3D
+title: Unity 3D
 bg: jp_diner_port0037.jpg
 nav:
   - text: Back

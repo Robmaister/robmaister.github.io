@@ -10,7 +10,7 @@ $accent-color-medium: #d90000;
 $accent-color-light: #ff6666;
 
 $primary-color-dark: #222;
-$primary-color-dark-transparent: rgba(34, 34, 34, 0.9);
+$primary-color-dark-transparent: rgba(34, 34, 34, 0.85);
 $primary-color-medium: #999;
 $primary-color-light: #ddd;
 
@@ -143,13 +143,15 @@ h2, h3, h4, h5, h6 {
 }
 
 .header-container {
-    background-color: $primary-color-dark;
-    background-color: $primary-color-dark-transparent;
-
     -webkit-transition: all 0.5s ease-in-out;
        -moz-transition: all 0.5s ease-in-out;
          -o-transition: all 0.5s ease-in-out;
             transition: all 0.5s ease-in-out;
+}
+
+nav {
+    background-color: $primary-color-dark;
+    background-color: $primary-color-dark-transparent;
 }
 
 nav ul {
@@ -170,28 +172,62 @@ nav ul li {
     text-align: center;
     vertical-align: middle;    
     cursor: pointer;
+    font-size: 1.2em;
+    line-height: 3em;
+}
+
+nav ul li:hover {
+    background-color: #666;
+    background-color: rgba(102, 102, 102, 0.4);
+}
+
+nav ul li.active {
+    background-color: #555;
+    background-color: rgba(85, 85, 85, 0.4);
+}
+nav ul li.active:hover {
+    background-color: #666;
+    background-color: rgba(102, 102, 102, 0.4);
 }
 
 nav ul li a {
     display: block;
-    font-size: 1.2em;
-    line-height: 3em;
     text-decoration: none;
     color: $primary-color-light;
 }
 
-nav ul li a:hover {
-    background-color: #666;
-    background-color: rgba(102, 102, 102, 0.4);
+#breadcrumbs {
+    background-color: #282828;
+    background-color: rgba(40, 40, 40, 0.85);
+    max-width: 100vw;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
-nav ul li a.selected {
+#breadcrumbs ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    text-align: left;
+}
+
+#breadcrumbs ul li {
+    display: inline-block;
+    line-height: 2.5em;
+    padding: 0 20px;
+}
+
+#breadcrumbs ul li.active {
     background-color: #555;
     background-color: rgba(85, 85, 85, 0.4);
 }
-nav ul li a.selected:hover {
-    background-color: #666;
-    background-color: rgba(102, 102, 102, 0.4);
+
+#breadcrumbs ul li a {
+    text-decoration: none;
+    color: $primary-color-light;
 }
 
 footer {
@@ -524,49 +560,32 @@ table {
     float: left;
 }
 
-#main-md ul.img-grid {
-    display: table;
-    list-style: none;
-    width: 100%;
-    table-layout: fixed;
-    padding: 0;
-    text-indent: 0;
-}
-
-#main-md ul.img-grid li {
-    display: table-cell;
-    padding: 0.25em;
-}
-
-#main-md ul.img-grid li:before {
-    display: none;
-}
-
-#main-md ul.category-grid {
+#main-md ul.content-grid {
     padding: 0;
     text-indent: 0;
     font-size: 0;
     line-height: 0;
 }
 
-#main-md ul.category-grid li {
+#main-md ul.content-grid li {
     display: inline-block;
-    width: 50%;
+    width: 100%;
     font-size: 1rem;
     padding: 5px;
     box-sizing: border-box;
+    vertical-align: middle;
 }
 
-#main-md ul.category-grid li img {
+#main-md ul.content-grid.img-rounded li img {
     border-radius: 20px;
 }
 
-#main-md ul.category-grid li a {
+#main-md ul.content-grid.img-highlight li a {
     position: relative;
     display: block;
 }
 
-#main-md ul.category-grid li a:hover:before {
+#main-md ul.content-grid.img-highlight li a:hover:before {
     content: "";
     display: block;
     position: absolute;
@@ -575,11 +594,14 @@ table {
     right: 0;
     bottom: 0;
     background-color: $accent-color-light;
-    border-radius: 20px;
     opacity: 0.5;
 }
 
-#main-md ul.category-grid li:before {
+#main-md ul.content-grid.img-highlight.img-rounded li a:hover:before {
+    border-radius: 20px;
+}
+
+#main-md ul.content-grid li:before {
     display: none;
 }
 
@@ -752,7 +774,21 @@ nav.loading ul li {
    Media Queries for Responsive Design.
    ======================================================================== */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 426px) {
+    #main-md ul.content-grid.content-grid-half li {
+        width: 50%;
+    }
+
+    #main-md ul.content-grid.content-grid-third li {
+        width: 33.333%;
+    }
+
+    #main-md ul.content-grid.content-grid-quarter li {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
 
 /* ====================
     WIDE: CSS3 Effects
@@ -776,15 +812,18 @@ nav.loading ul li {
    
     .header-container {
         margin-top: 50px;
+    }
+
+    nav {
         border-top-left-radius: $body-border-radius;
         border-top-right-radius: $body-border-radius;
     }
 
-    nav ul li:first-child a {
+    nav ul li:first-child {
         border-top-left-radius: $body-border-radius;
     }
 
-    nav ul li:last-child a {
+    nav ul li:last-child {
         border-top-right-radius: $body-border-radius;
     }
  

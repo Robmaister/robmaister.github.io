@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Level Design - Source Engine
+title: Source Engine
 bg: jp_diner_port0037.jpg
 ---
 
@@ -22,19 +22,13 @@ the earliest maps I worked on and I learned a lot in the process. This map
 includes a number of custom props and textures (made in Maya and Photoshop)
 and taught me plenty about visleaf optimization.
 
- {: .img-grid}
+ {: .content-grid  .content-grid-half}
  - [![diner_port][1]][1]{: data-lightbox="gallery-jp"}
  - {{ jp_diner_yt_embed | strip_newlines }}
-
- {: .img-grid}
  - [![diner_env][2]][2]{: data-lightbox="gallery-jp"}
  - [![diner_night][3]][3]{: data-lightbox="gallery-jp"}
-
- {: .img-grid}
  - [![diner][4]][4]{: data-lightbox="gallery-jp"}
  - [![diner][5]][5]{: data-lightbox="gallery-jp"}
-
- {: .img-grid}
  - [![diner][6]][6]{: data-lightbox="gallery-jp"}
  - [![diner][7]][7]{: data-lightbox="gallery-jp"}
 
@@ -47,7 +41,7 @@ and taught me plenty about visleaf optimization.
 Made as part of a project for a high school history class and later expanded
 to be a more functional map. Never settled on a game to develop it for.
 
- {: .img-grid}
+ {: .content-grid  .content-grid-half}
  - [![temple][8]][8]{: data-lightbox="gallery-toh"}
  - [![temple][9]][9]{: data-lightbox="gallery-toh"}
 
@@ -61,7 +55,7 @@ architecture. This was my submission for one segment of the hallway. My
 section includes several custom props and textures, and some very intricate
 (but still valid and on the grid) brushwork.
 
-{: .img-grid}
+{: .content-grid  .content-grid-half}
  - [![hallway-main][16]][16]{: data-lightbox="gallery-hoa"}
  - [![hallway-second][17]][17]{: data-lightbox="gallery-hoa"}
 
@@ -77,15 +71,11 @@ Made as a request from a user on the [Facepunch mapping forum](https://facepunch
 
 ## Miscellaneous
 
- {: .img-grid}
+ {: .content-grid .content-grid-half}
  - [![brick-structure][10]][10]{: data-lightbox="gallery-misc"}
  - [![nature][11]][11]{: data-lightbox="gallery-misc"}
-
- {: .img-grid}
  - [![][12]][12]{: data-lightbox="gallery-misc"}
  - [![][13]][13]{: data-lightbox="gallery-misc"}
-
-  {: .img-grid}
  - [![][14]][14]{: data-lightbox="gallery-misc"}
  - [![][15]][15]{: data-lightbox="gallery-misc"}
 

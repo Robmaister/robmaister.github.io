@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Level Design - Unreal Engine 4
+title: Unreal Engine 4
 bg: jp_diner_port0037.jpg
 nav:
   - text: Back
