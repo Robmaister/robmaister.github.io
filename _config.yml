@@ -11,7 +11,7 @@ handles:
   facebook: robert.rouhani
 
 # Build settings
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 markdown: kramdown
 permalink: /blog/:categories/:year/:month/:day/:title/
 timezone: America/New_York
