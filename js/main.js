@@ -93,7 +93,7 @@ function load_new_page(url) {
             document.title = jData.filter("title").text();
             
             //intercept new links
-            intercept_links("#main-md a");
+            intercept_links("#main a");
             
             //transition back after a short wait
             setTimeout(function(){
@@ -139,7 +139,7 @@ $(document).ready(function () {
 
     //Handle links dynamically
 	intercept_links("nav ul li a");
-    intercept_links("#main-md a");
+    intercept_links("#main a");
 
     //Deal with history
     $(window).on("popstate", function(event) {

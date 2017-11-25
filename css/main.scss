@@ -542,6 +542,47 @@ table {
     display: none;
 }
 
+#main-md ul.category-grid {
+    padding: 0;
+    text-indent: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+#main-md ul.category-grid li {
+    display: inline-block;
+    width: 50%;
+    font-size: 1rem;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#main-md ul.category-grid li img {
+    border-radius: 20px;
+}
+
+#main-md ul.category-grid li a {
+    position: relative;
+    display: block;
+}
+
+#main-md ul.category-grid li a:hover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $accent-color-light;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+
+#main-md ul.category-grid li:before {
+    display: none;
+}
+
 .embed-responsive-container {
     margin: 0 auto;
 }
