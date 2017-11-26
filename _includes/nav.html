@@ -8,22 +8,29 @@
         <div id="breadcrumbs">
             <ul>
             {%- assign split_url = page.url | split: '/' -%}
-            {%- capture forLoopMaxInt -%}{{ split_url.size | minus:1 }}{%- endcapture -%}
-            {%- for i in (1..forLoopMaxInt) -%}
-                {%- capture current_breadcrumb_url -%}{{next_prepender}}/{{ split_url[i] }}/{%- endcapture -%}
-                {%- capture next_prepender -%}{{next_prepender}}/{{ split_url[i] }}{%- endcapture -%}
-                {%- if i == 1 -%}
-                    {%- continue -%}
-                {%- endif -%}
+            {%- assign num_breadcrumbs = 0 -%}
+            {%- assign split_url_len = split_url.size | minus:1 -%}
+            {%- capture next_prepender -%}/{{ split_url[1] }}{%- endcapture -%}            
+
+            {%- capture breadcrumb_list -%}
+            {%- for i in (2..split_url_len) -%}
+                {%- capture current_breadcrumb_url -%}{{ next_prepender }}/{{ split_url[i] }}/{%- endcapture -%}
+                {%- capture next_prepender -%}{{ next_prepender }}/{{ split_url[i] }}{%- endcapture -%}
                 {%- assign active = forloop.last -%}
                 {%- for breadcrumb_page in site.pages -%}
                     {%- if current_breadcrumb_url == breadcrumb_page.url -%}
+                        {%- assign num_breadcrumbs = num_breadcrumbs | plus: 1 -%}
                         <li{% if active %} class="active"{% endif %}>
                             <a href="{{ site.baseurl }}{{ breadcrumb_page.url }}">{{breadcrumb_page.title}}</a>
                         </li>
                     {%- endif -%}
                 {%- endfor -%}
             {%- endfor -%}
+            {%- endcapture -%}
+
+            {%- if num_breadcrumbs >= 2 -%}
+                {{ breadcrumb_list }}
+            {%- endif -%}
             </ul>
         </div>
     </header>

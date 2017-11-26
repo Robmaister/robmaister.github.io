@@ -120,6 +120,7 @@ body {
     background-repeat: no-repeat;
 
     min-width: 100%;
+    max-width: 100vw;
 }
 
 //Hack for a viewport-based "cover" mode
@@ -664,6 +665,10 @@ table {
     font-size: 1.5em;
 }
 
+.social-media-link:hover {
+    color: $accent-color-medium;
+}
+
 .copyright {
     font-size: 0.75em;
     color: $primary-color-dark;
@@ -834,11 +839,6 @@ nav.loading ul li {
 
     nav ul li:last-child {
         border-top-right-radius: $body-border-radius;
-    }
- 
-    #breadcrumbs {
-        white-space: normal;
-        overflow-y: auto;
     }
 
     footer {
