@@ -1,5 +1,6 @@
 ---
 layout: page
+has-lightbox: true
 title: Far Cry 2
 bg: jp_diner_port0037.jpg
 ---

@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Android programming with OpenGL ES 1.0
 date: '2010-12-20 01:41:32 -0500'
 tags: [software]

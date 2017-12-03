@@ -10,7 +10,7 @@ nav:
       url: /portfolio/
 ---
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html class="no-js{% if page.has-lightbox %} has-lightbox{% endif %}{% if page.has-code %} has-code{% endif %}" lang="">
 <head>
 {% include head.html %}
 </head>

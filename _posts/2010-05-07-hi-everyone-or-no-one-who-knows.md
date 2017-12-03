@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Hi everyone! (or no one, who knows?)
 date: '2010-05-07 00:43:57 -0400'
 preview-img:

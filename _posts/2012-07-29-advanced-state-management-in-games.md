@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-code: true
 title: Advanced State Management in Games
 date: '2012-07-29 13:11:13 -0400'
 tags: [software]

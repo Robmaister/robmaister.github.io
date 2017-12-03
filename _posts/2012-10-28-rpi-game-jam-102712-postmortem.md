@@ -3,7 +3,8 @@ layout: post
 status: publish
 published: true
 comments: true
-has_code: true
+has-lightbox: true
+has-code: true
 title: RPI Game Jam 10/27/12 Postmortem
 date: '2012-10-28 16:44:45 -0400'
 tags: [software, game-jams]

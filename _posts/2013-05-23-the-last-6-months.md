@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: The Last 6 Months
 date: '2013-05-22 21:52:58 -0400'
 tags: [software]

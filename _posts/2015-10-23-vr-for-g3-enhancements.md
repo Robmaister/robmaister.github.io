@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: VR for G3 enhancements
 date: '2015-10-23 14:17:20 -0400'
 tags: [hardware, vr]

@@ -2,7 +2,7 @@
 layout: page
 bg: bg-index-min.jpg
 title: Robert Rouhani
-subtitle: Virtual Reality Developer
+subtitle: Game & Virtual Reality Developer
 sidebar: |
     ## Quick Links
      - [<i class="fa fa-fw fa-file-pdf-o"></i> Resume](/downloads/RobertRouhaniResume.pdf){: .button .ext-link}

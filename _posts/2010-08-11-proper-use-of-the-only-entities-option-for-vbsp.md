@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Proper use of the "Only Entities" option for VBSP
 date: '2010-08-11 02:14:35 -0400'
 tags: [level-design, source-engine]

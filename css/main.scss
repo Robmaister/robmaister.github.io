@@ -1,5 +1,8 @@
 ---
 ---
+{% include css/normalize.css %}
+{% include css/font-awesome.min.css %}
+
 /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
 
 $bg-base-color: #fff;
@@ -18,8 +21,8 @@ $font-primary: 'Julius Sans One', sans-serif;
 $font-secondary: 'Archivo Narrow', sans-serif;
 $font-body: 'Source Sans Pro', sans-serif;
 
-$body-border-radius: 15px;
-$content-border-radius: 10px;
+$body-border-radius: 1em;
+$content-border-radius: 0.5em;
 
 html {
     color: $primary-color-dark;
@@ -173,8 +176,7 @@ nav ul li {
     text-align: center;
     vertical-align: middle;    
     cursor: pointer;
-    font-size: 1.2em;
-    line-height: 3em;
+    line-height: 3.5em;
 }
 
 nav ul li:hover {
@@ -194,6 +196,7 @@ nav ul li.active:hover {
 nav ul li a {
     display: block;
     text-decoration: none;
+    font-size: 1.2em;
     color: $primary-color-light;
 }
 
@@ -217,7 +220,6 @@ nav ul li a {
 #breadcrumbs ul li {
     display: inline-block;
     line-height: 2.5em;
-    padding: 0 20px;
 }
 
 #breadcrumbs ul li:hover {
@@ -236,8 +238,10 @@ nav ul li a {
 }
 
 #breadcrumbs ul li a {
+    display: block;
     text-decoration: none;
     color: $primary-color-light;
+    padding: 0 20px;    
 }
 
 footer {
@@ -587,7 +591,7 @@ table {
 }
 
 #main-md ul.content-grid.img-rounded li img {
-    border-radius: 20px;
+    border-radius: $content-border-radius;
 }
 
 #main-md ul.content-grid.img-highlight li a {
@@ -608,7 +612,7 @@ table {
 }
 
 #main-md ul.content-grid.img-highlight.img-rounded li a:hover:before {
-    border-radius: 20px;
+    border-radius: $content-border-radius;
 }
 
 #main-md ul.content-grid li:before {
@@ -684,7 +688,7 @@ a.button {
     margin: 0 0.5em 1em 0;
     font-size: 1.2em;
     line-height: 2.2em;
-    border-radius: 0.5em;
+    border-radius: $content-border-radius;
     box-sizing: border-box;
     text-decoration: none;
 

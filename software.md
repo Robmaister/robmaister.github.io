@@ -10,18 +10,24 @@ sidebar: |
      {: .list-no-style}
 ---
 
-I am a software engineer first and foremost, with experience ranging from
-realtime computer graphics to software asset management to firmware. Below is
-a selection of the work I have permission to share information about.
+I am a software engineer first and foremost, with experience in a range of
+programming languages and technologies. In terms of languages, I primarily
+work in C/C++ and C#, but have some experience with Node.js, Java, SQL, PHP,
+and Python. I have extensive knowledge of OpenGL and Unity, as well as a
+working knowledge of Unreal Engine 4, Xamarin, Android SDK/NDK, Arduino, and
+interfacing with operating systems via WinAPI and POSIX APIs.
+
+This site itself was built on a relatively slim base as a way to learn about
+and experiment with frontend web development.
+
+A lot of my work experience has included picking up technologies and languages
+that I am not familiar with. In most cases with the availability of source
+code or documentation, I can quickly start making meaningful contributions.
+
+Below is a selection of the work I have permission to share information about.
 
 If you would like to hire me on a contract basis, please contact me via email
-(available via my resume), or via Facebook Messenger with details.
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+(listed in my resume), or via Facebook Messenger with details.
 
 {: .content-grid  .content-grid-half .img-highlight .img-rounded}
  - [![Ilium VR](/img/software/category_sw_ilium.jpg)](/software/ilium-vr/)

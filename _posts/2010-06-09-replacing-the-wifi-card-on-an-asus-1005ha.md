@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Replacing the Wifi Card on an Asus 1005HA
 date: '2010-06-09 23:00:45 -0400'
 tags: [hardware]

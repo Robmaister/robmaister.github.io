@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Reflections on Implementing Cascaded Shadow Maps
 date: '2013-07-07 13:34:13 -0400'
 tags: [software]

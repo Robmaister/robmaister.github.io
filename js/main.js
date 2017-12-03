@@ -1,8 +1,22 @@
+---
+---
 
 //TODO some auto-scroll locations are wrong when navigating back and forth
 //between pages of different heights. Most noticable by scrolling to the
 //bottom of /blog and clicking on the last article, then pressing the browser
 //back button.
+
+//https://stackoverflow.com/a/13556622/1122135
+function load_new_css(url) {
+    var tag  = $("<link>");
+    $("head").append(tag);
+
+    tag.attr({
+        rel: "stylesheet",
+        type: "text/css",
+        href: url
+    });
+}
 
 // Makes sure there are no selected nav bar links
 function clear_selected_links() {
@@ -50,7 +64,7 @@ function load_new_page(url) {
             var jData = $(data);
 
             //swap backgrounds
-            var new_bg = data.match(/body style=\"(.*?)\"/)[1];
+            var new_bg = data.match(/<body style=\"(.*?)\"/)[1];
             if ($("body").attr("style") != new_bg) {
                 var new_bg_path = new_bg.match(/background-image: url\((.*?)\)/)[1];
                 var new_bg_img = new Image();
@@ -58,6 +72,18 @@ function load_new_page(url) {
                     $("body").attr("style", new_bg);
                 };
                 new_bg_img.src = new_bg_path;
+            }
+
+            //load extra stylesheets and js
+            var new_html_classes = data.match(/<html class=\"(.*?)\"/)[1].split(" ");
+            if (new_html_classes.indexOf("has-lightbox") > -1 && !$("html").hasClass("has-lightbox")) {
+                load_new_css("{{ site.baseurl }}/css/lightbox.min.css");
+                $.getScript("{{ site.baseurl }}/js/vendor/lightbox.min.js");
+                $("html").addClass("has-lightbox");
+            }
+            if (new_html_classes.indexOf("has-code") > -1 && !$("html").hasClass("has-code")) {
+                load_new_css("{{ site.baseurl }}/css/solarized-dark.css");
+                $("html").addClass("has-code");
             }
 
             //check for DISQUS on new page

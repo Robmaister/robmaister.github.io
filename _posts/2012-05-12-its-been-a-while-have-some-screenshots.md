@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: It's been a while, have some screenshots!
 date: '2012-05-12 00:03:57 -0400'
 tags: [software]

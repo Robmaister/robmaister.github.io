@@ -3,6 +3,7 @@ layout: post
 status: publish
 published: true
 comments: true
+has-lightbox: true
 title: Portfolio night
 date: '2010-05-22 16:29:20 -0400'
 date_gmt: '2010-05-22 23:29:20 -0400'
