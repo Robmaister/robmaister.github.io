@@ -113,11 +113,16 @@ function load_new_page(url) {
                 });
             }
 
+            //Reset places for DISQUS count to update
+            if (window.DISQUSWIDGETS) {
+                window.DISQUSWIDGETS.getCount({reset: true});
+            }
+
             //Fix broken Instagram embeds on AJAX navigation
             if (window.instgrm) {
                 window.instgrm.Embeds.process();
             }
-            
+
             //swap titles
             document.title = jData.filter("title").text();
             
