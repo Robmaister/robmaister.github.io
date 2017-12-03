@@ -1,6 +1,3 @@
----
----
-
 //TODO some auto-scroll locations are wrong when navigating back and forth
 //between pages of different heights. Most noticable by scrolling to the
 //bottom of /blog and clicking on the last article, then pressing the browser
@@ -76,13 +73,13 @@ function load_new_page(url) {
 
             //load extra stylesheets and js
             var new_html_classes = data.match(/<html class=\"(.*?)\"/)[1].split(" ");
-            if (new_html_classes.indexOf("has-lightbox") > -1 && !$("html").hasClass("has-lightbox")) {
-                load_new_css("{{ site.baseurl }}/css/lightbox.min.css");
-                $.getScript("{{ site.baseurl }}/js/vendor/lightbox.min.js");
+            if (new_html_classes.indexOf("has-lightbox") >= 0 && !$("html").hasClass("has-lightbox")) {
+                load_new_css("/css/lightbox.min.css");
+                $.getScript("/js/vendor/lightbox.min.js");
                 $("html").addClass("has-lightbox");
             }
-            if (new_html_classes.indexOf("has-code") > -1 && !$("html").hasClass("has-code")) {
-                load_new_css("{{ site.baseurl }}/css/solarized-dark.css");
+            if (new_html_classes.indexOf("has-code") >= 0 && !$("html").hasClass("has-code")) {
+                load_new_css("/css/solarized-dark.css");
                 $("html").addClass("has-code");
             }
 
@@ -115,6 +112,11 @@ function load_new_page(url) {
                     }
                 });
             }
+
+            //Fix broken Instagram embeds on AJAX navigation
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
             
             //swap titles
             document.title = jData.filter("title").text();
@@ -127,6 +129,13 @@ function load_new_page(url) {
             setTimeout(function(){
                 $("#main").removeClass("loading");
                 $("body").removeClass("loading");
+
+                ga('set', {page: url, title: document.title});
+                ga('send', 'pageview');
+
+                if (url.indexOf("#") >= 0) {
+                    window.scrollTo(0, $(url.split("#")[1]).offset().top);
+                }
             }, 10);
         }, 500);
     })
@@ -148,11 +157,29 @@ function intercept_links(selector) {
         //prevent link from clicking through
         e.preventDefault();
 
-        //do nothing if the link is to the current page
-        if (url == window.location.href) {
+        //if we're linking to something on the same page
+        if (this.protocol == location.protocol &&
+            this.host == location.host &&
+            this.pathname == location.pathname &&
+            this.search == location.search) {
+            
+            //scoll to new anchor if one exists
+            if (this.hash !== '' && this.hash !== '#') {
+
+                //push new history state
+                if (this.hash != location.hash) {
+                    history.pushState({url: url}, document.title, url);
+                }
+
+                //scroll to anchor
+                window.scrollTo(0, $(this.hash).offset().top);
+            }
+
+            //don't do anything else if on the same page
             return;
         }
 
+        //push new history state if link is valid
         history.pushState({url: url}, document.title, url);
         load_new_page(url);
 
@@ -178,6 +205,6 @@ $(document).ready(function () {
 
     //Deal with history
     $(window).on("popstate", function(event) {
-            load_new_page(event.originalEvent.state.url);
+        load_new_page(event.originalEvent.state.url);
     });
 });
