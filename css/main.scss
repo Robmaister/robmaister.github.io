@@ -644,17 +644,46 @@ table {
     margin: 0.5em auto !important;
 }
 
-.highlight {
-    margin: 0;
-    padding: 0 0.5em;
+code {
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+}
+
+.highlight .code {
+    overflow-x: auto; /* Adds a horizontal scrollbar if needed */
 }
 
 .highlight table {
-    table-layout: initial;
+    border-spacing: 0;
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+.highlight code {
+    padding: 0;
+}
+
+.code-caption {
+    font-family: monospace, monospace;
+    font-size: 0.75em;
+    padding: 0 0.5em;
+    margin: 1em 0 0 0;
+}
+
+.highlight {
+    margin: 0 0 1em 0;
+    padding-left: 0.5em;
+}
+
+.highlight .gutter {
+    width: 2.25em;
+    vertical-align: baseline;
 }
 
 .code pre {
-    margin-left: 1.5em;
+    margin-left: 0.25em;
 }
 
 #disqus_thread {

@@ -10,11 +10,13 @@ handles:
   twitter: robmaister
   facebook: robert.rouhani
 
+permalink: /blog/:categories/:year/:month/:day/:title/
+timezone: America/Los_Angeles
+
 # Build settings
 plugins: [jekyll-paginate]
 markdown: kramdown
-permalink: /blog/:categories/:year/:month/:day/:title/
-timezone: America/New_York
+highlighter: rouge
 
 sass:
   style: compressed
@@ -34,12 +36,6 @@ social-media-links:
   - site: Stack Overflow
     icon: fa-stack-overflow
     url: https://stackoverflow.com/users/1122135/robert-rouhani
-  - site: Facebook
-    icon: fa-facebook
-    url: https://www.facebook.com/robert.rouhani
-  - site: Twitter
-    icon: fa-twitter
-    url: https://twitter.com/robmaister
     
 defaults:
   -
