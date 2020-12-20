@@ -41,39 +41,39 @@ is defined like so:
 USTRUCT(BlueprintType)
 struct FTarget
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FTransform Transform;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FTransform Transform;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FLinearColor Color = FLinearColor::Red;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FLinearColor Color = FLinearColor::Red;
 };
 
 USTRUCT(BlueprintType)
 struct FTargetWave
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Timeout = 15.f;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    float Timeout = 15.f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FTarget> Targets;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<FTarget> Targets;
 };
 
 UCLASS()
 class UTargetPracticeRound : public UDataAsset
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText DisplayName;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FText DisplayName;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FTargetWave> Waves;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    TArray<FTargetWave> Waves;
 };
 {% endhighlight %}
 
@@ -137,19 +137,19 @@ using UnrealBuildTool;
 
 public class BeyondDataAssetEditor : ModuleRules
 {
-	public BeyondDataAssetEditor(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+    public BeyondDataAssetEditor(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[]
-		{
-			"BeyondDataAsset",
+        PublicDependencyModuleNames.AddRange(new string[]
+        {
+            "BeyondDataAsset",
 
-			"Core",
-			"CoreUObject",
-			"Engine",
-		});
-	}
+            "Core",
+            "CoreUObject",
+            "Engine",
+        });
+    }
 }
 {% endhighlight %}
 
@@ -168,8 +168,8 @@ class FBeyondDataAssetEditorModule : public IModuleInterface
 {
 public:
 
-	virtual void StartupModule() override;
-	virtual void ShutdownModule() override;
+    virtual void StartupModule() override;
+    virtual void ShutdownModule() override;
 };
 {% endhighlight %}
 
@@ -297,13 +297,13 @@ This class belongs in the editor module.
 UCLASS()
 class UTargetPracticeRoundFactory : public UFactory
 {
-	GENERATED_BODY()
-	
+    GENERATED_BODY()
+    
 public:
 
-	UTargetPracticeRoundFactory();
+    UTargetPracticeRoundFactory();
 
-	virtual UObject* FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn) override;
+    virtual UObject* FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn) override;
 };
 {% endhighlight %}
 
@@ -315,14 +315,14 @@ public:
 
 UTargetPracticeRoundFactory::UTargetPracticeRoundFactory()
 {
-	bCreateNew = true;
-	bEditAfterNew = true;
-	SupportedClass = UTargetPracticeRound::StaticClass();
+    bCreateNew = true;
+    bEditAfterNew = true;
+    SupportedClass = UTargetPracticeRound::StaticClass();
 }
 
 UObject* UTargetPracticeRoundFactory::FactoryCreateNew(UClass* Class, UObject* InParent, FName Name, EObjectFlags Flags, UObject* Context, FFeedbackContext* Warn)
 {
-	return NewObject<UTargetPracticeRound>(InParent, UTargetPracticeRound::StaticClass(), Name, Flags | RF_Transactional);
+    return NewObject<UTargetPracticeRound>(InParent, UTargetPracticeRound::StaticClass(), Name, Flags | RF_Transactional);
 }
 {% endhighlight %}
 
@@ -349,10 +349,10 @@ for the asset, among many other customizations.
 class FAssetTypeActions_TargetPracticeRound : public FAssetTypeActions_Base
 {
 public:
-	virtual FText GetName() const override { return NSLOCTEXT("AssetTypeActions", "AssetTypeActions_TargetPracticeRound", "Target Practice Round"); }
-	virtual FColor GetTypeColor() const override { return FColor(20, 60, 210); }
-	virtual UClass* GetSupportedClass() const override { return UTargetPracticeRound::StaticClass(); }
-	virtual uint32 GetCategories() override { return FBeyondDataAssetEditorModule::GetAssetCategory(); }
+    virtual FText GetName() const override { return NSLOCTEXT("AssetTypeActions", "AssetTypeActions_TargetPracticeRound", "Target Practice Round"); }
+    virtual FColor GetTypeColor() const override { return FColor(20, 60, 210); }
+    virtual UClass* GetSupportedClass() const override { return UTargetPracticeRound::StaticClass(); }
+    virtual uint32 GetCategories() override { return FBeyondDataAssetEditorModule::GetAssetCategory(); }
 };
 {% endhighlight %}
 
@@ -374,14 +374,14 @@ will still be visible just under the "Miscellaneous" category.
 class FBeyondDataAssetEditorModule : public IModuleInterface
 {
 public:
-	// ...
+    // ...
 
-	static EAssetTypeCategories::Type GetAssetCategory() { return CustomAssetCategory; }
+    static EAssetTypeCategories::Type GetAssetCategory() { return CustomAssetCategory; }
 
 private:
 
-	static EAssetTypeCategories::Type CustomAssetCategory;
-	TArray<TSharedPtr<IAssetTypeActions>> RegisteredAssetTypeActions;
+    static EAssetTypeCategories::Type CustomAssetCategory;
+    TArray<TSharedPtr<IAssetTypeActions>> RegisteredAssetTypeActions;
 };
 {% endhighlight %}
 
@@ -395,29 +395,29 @@ EAssetTypeCategories::Type FBeyondDataAssetEditorModule::CustomAssetCategory;
 // ...
 void FBeyondDataAssetEditorModule::StartupModule()
 {
-	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
-	CustomAssetCategory = AssetTools.RegisterAdvancedAssetCategory(FName(TEXT("MyGame")), NSLOCTEXT("BeyondDataAssetEditor", "MyGameCategory", "My Game"));
+    IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
+    CustomAssetCategory = AssetTools.RegisterAdvancedAssetCategory(FName(TEXT("MyGame")), NSLOCTEXT("BeyondDataAssetEditor", "MyGameCategory", "My Game"));
 
-	auto RegisterAssetTypeAction = [&](TSharedRef<IAssetTypeActions> Action)
-	{
-		AssetTools.RegisterAssetTypeActions(Action);
-		RegisteredAssetTypeActions.Add(Action);
-	};
+    auto RegisterAssetTypeAction = [&](TSharedRef<IAssetTypeActions> Action)
+    {
+        AssetTools.RegisterAssetTypeActions(Action);
+        RegisteredAssetTypeActions.Add(Action);
+    };
 
-	RegisterAssetTypeAction(MakeShareable(new FAssetTypeActions_TargetPracticeRound));
+    RegisterAssetTypeAction(MakeShareable(new FAssetTypeActions_TargetPracticeRound));
 }
 
 void FBeyondDataAssetEditorModule::ShutdownModule()
 {
-	if (FModuleManager::Get().IsModuleLoaded("AssetTools"))
-	{
-		IAssetTools& AssetTools = FModuleManager::GetModuleChecked<FAssetToolsModule>("AssetTools").Get();
-		for (auto CreatedAssetTypeAction : RegisteredAssetTypeActions)
-		{
-			AssetTools.UnregisterAssetTypeActions(CreatedAssetTypeAction.ToSharedRef());
-		}
-	}
-	RegisteredAssetTypeActions.Empty();
+    if (FModuleManager::Get().IsModuleLoaded("AssetTools"))
+    {
+        IAssetTools& AssetTools = FModuleManager::GetModuleChecked<FAssetToolsModule>("AssetTools").Get();
+        for (auto CreatedAssetTypeAction : RegisteredAssetTypeActions)
+        {
+            AssetTools.UnregisterAssetTypeActions(CreatedAssetTypeAction.ToSharedRef());
+        }
+    }
+    RegisteredAssetTypeActions.Empty();
 }
 // ...
 {% endhighlight %}
@@ -430,8 +430,8 @@ for the AssetTools module which we are now using.
 // ...
 PublicDependencyModuleNames.AddRange(new string[]
 {
-// ...
-	"AssetTools"
+    // ...
+    "AssetTools"
 });
 // ...
 {% endhighlight %}
