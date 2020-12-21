@@ -36,7 +36,7 @@ Specifically, this target practice system will present multiple timed waves of
 targets to shoot. Each target can be customized visually. The DataAsset class
 is defined like so:
 
-<div class="code-caption">TargetPracticeRound.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAsset/TargetPracticeRound.h" %}
 {% highlight cpp linenos %}
 USTRUCT(BlueprintType)
 struct FTarget
@@ -131,7 +131,7 @@ under the Source folder in your game project. Open up the `.Build.cs` and add
 contents similar to the following. Make sure to substitute your project's name
 wherever `BeyondDataAsset` is used.
 
-<div class="code-caption">BeyondDataAssetEditor.Build.cs</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.Build.cs" %}
 {% highlight csharp linenos %}
 using UnrealBuildTool;
 
@@ -149,6 +149,8 @@ public class BeyondDataAssetEditor : ModuleRules
             "CoreUObject",
             "Engine",
         });
+
+        PublicIncludePaths.Add("BeyondDataAssetEditor/");
     }
 }
 {% endhighlight %}
@@ -156,7 +158,7 @@ public class BeyondDataAssetEditor : ModuleRules
 The `.h` file should have contents similar to this. The log category is not
 necessary but can be useful for debugging later on.
 
-<div class="code-caption">BeyondDataAssetEditor.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.h" %}
 {% highlight cpp linenos %}
 #pragma once
 
@@ -176,7 +178,7 @@ public:
 The `.cpp` file is where we will be registering all of our editor classes. For
 now the Startup/Shutdown functions are empty stubs.
 
-<div class="code-caption">BeyondDataAssetEditor.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.cpp" %}
 {% highlight cpp linenos %}
 #include "BeyondDataAssetEditor.h"
 
@@ -204,7 +206,7 @@ and not using legacy include paths.
 In the game module's `.Build.cs` file, add the following line so that the root
 module folder is part of the include path.
 
-<div class="code-caption">BeyondDataAsset.Bulid.cs</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAsset/BeyondDataAsset.Bulid.cs" %}
 {% highlight csharp linenos %}
 PublicIncludePaths.Add("BeyondDataAsset/");
 {% endhighlight %}
@@ -214,7 +216,7 @@ PublicIncludePaths.Add("BeyondDataAsset/");
 Add a second entry to the Modules array in your project's `.uproject` file. For
 a brand new project, the file should look like this:
 
-<div class="code-caption">BeyondDataAsset.uproject</div>
+{% include highlight-caption.html wb="/" caption="BeyondDataAsset.uproject" %}
 {% highlight json linenos %}
 {
   "FileVersion": 3,
@@ -239,7 +241,7 @@ a brand new project, the file should look like this:
 Finally, modify your project's `Editor.Target.cs` file to point
 `ExtraModuleNames` to the editor module instead of the primary game module.
 
-<div class="code-caption">BeyondDataAssetEditor.Target.cs</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor.Target.cs" %}
 {% highlight csharp linenos %}
 ExtraModuleNames.Add("BeyondDataAssetEditor");
 {% endhighlight %}
@@ -272,7 +274,7 @@ The macro is the module name in all caps folowed by `_API`. Because this class
 is in our primary game module, the macro is `BEYONDDATAASSET_API`. If the class
 was created via the Add C++ Class dialog, this macro is included by default.
 
-<div class="code-caption">TargetPracticeRound.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAsset/TargetPracticeRound.h" %}
 {% highlight cpp linenos %}
 class BEYONDDATAASSET_API UTargetPracticeRound : public UObject
 {% endhighlight %}
@@ -286,7 +288,7 @@ variables in the constructor to specify which contexts and classes are valid.
 
 This class belongs in the editor module.
 
-<div class="code-caption">TargetPracticeRoundFactory.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundFactory.h" %}
 {% highlight cpp linenos %}
 #pragma once
 
@@ -307,7 +309,7 @@ public:
 };
 {% endhighlight %}
 
-<div class="code-caption">TargetPracticeRoundFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundFactory.cpp" %}
 {% highlight cpp linenos %}
 #include "TargetPracticeRoundFactory.h"
 
@@ -338,7 +340,7 @@ the functions that specify the asset's most basic properties, but this class is
 where you would extend the right-click menu and change which AssetEditor opens
 for the asset, among many other customizations.
 
-<div class="code-caption">AssetTypeActions_TargetPracticeRound.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetTypeActions/AssetTypeActions_TargetPracticeRound.h" %}
 {% highlight cpp linenos %}
 #pragma once
 
@@ -365,7 +367,7 @@ In order to use the new AssetTypeActions, we must register it with the
 function. We will also make a custom category. If this is skipped, the asset
 will still be visible just under the "Miscellaneous" category.
 
-<div class="code-caption">BeyondDataAssetEditor.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.h" %}
 {% highlight cpp linenos %}
 // ...
 #include "AssetTypeCategories.h"
@@ -385,10 +387,10 @@ private:
 };
 {% endhighlight %}
 
-<div class="code-caption">BeyondDataAssetEditor.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.cpp" %}
 {% highlight cpp linenos %}
 // ...
-#include "AssetTypeActions_TargetPracticeRound.h"
+#include "AssetTypeActions/AssetTypeActions_TargetPracticeRound.h"
 #include "IAssetTools.h"
 
 EAssetTypeCategories::Type FBeyondDataAssetEditorModule::CustomAssetCategory;
@@ -425,7 +427,7 @@ void FBeyondDataAssetEditorModule::ShutdownModule()
 Finally, we will need to add a new module dependency to our `.Build.cs` file
 for the AssetTools module which we are now using.
 
-<div class="code-caption">BeyondDataAssetEditor.Build.cs</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.Build.cs" %}
 {% highlight csharp linenos %}
 // ...
 PublicDependencyModuleNames.AddRange(new string[]

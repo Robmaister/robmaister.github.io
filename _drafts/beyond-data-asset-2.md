@@ -32,7 +32,7 @@ We need to add one to our asset class, and make sure it's initialized as early
 in the loading process as possible. This setup is the same as every other
 importable asset class.
 
-<div class="code-caption">TargetPracticeRound.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAsset/TargetPracticeRound.h" %}
 {% highlight cpp linenos %}
 // ...
 class BEYONDDATAASSET_API UTargetPracticeRound : public UObject
@@ -47,7 +47,7 @@ class BEYONDDATAASSET_API UTargetPracticeRound : public UObject
 };
 {% endhighlight %}
 
-<div class="code-caption">TargetPracticeRound.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAsset/TargetPracticeRound.cpp" %}
 {% highlight cpp linenos %}
 #include "TargetPracticeRound.h"
 #include "EditorFramework/AssetImportData.h"
@@ -80,7 +80,7 @@ relationship between factories and asset types.
 Some small changes are needed in our AssetTypeActions clsss in order to inform
 the engine that our class can be imported and to grab the source file paths.
 
-<div class="code-caption">AssetTypeActions_TargetPracticeRound.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetTypeActions/AssetTypeActions_TargetPracticeRound.h" %}
 {% highlight cpp linenos %}
 // ...
 class FAssetTypeActions_TargetPracticeRound : public FAssetTypeActions_Base
@@ -91,7 +91,7 @@ class FAssetTypeActions_TargetPracticeRound : public FAssetTypeActions_Base
 };
 {% endhighlight %}
 
-<div class="code-caption">AssetTypeActions_TargetPracticeRound.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetTypeActions/AssetTypeActions_TargetPracticeRound.cpp" %}
 {% highlight cpp linenos %}
 #include "AssetTypeActions_TargetPracticeRound.h"
 
@@ -124,7 +124,7 @@ asset.
 
 A sample file to import:
 
-<div class="code-caption">ImportTest.targetpractice</div>
+{% include highlight-caption.html wb="/" caption="/Content/ImportTest.targetpractice" %}
 {% highlight json linenos %}
 {
     "display_name": "Imported Round",
@@ -160,7 +160,7 @@ A sample file to import:
 To set up importing, we need to make a separate `UFactory` subclass with
 different settings in the constructor.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.h" %}
 {% highlight cpp linenos %}
 #pragma once
 
@@ -185,7 +185,7 @@ public:
 In this case, we configure the new factory for import of a text file with the
 extension `.targetpractice`.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.cpp" %}
 {% highlight cpp linenos %}
 #include "TargetPracticeRoundImportFactory.h"
 
@@ -209,7 +209,7 @@ as many factory settings as possible, including the specified file extensions.
 It serves no purpose for this simple example, but is useful for when there are
 multiple factories for the same file type.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.cpp" %}
 {% highlight cpp linenos %}
 bool UTargetPracticeRoundImportFactory::FactoryCanImport(const FString& Filename)
 {
@@ -222,7 +222,7 @@ function must create a new object, write the imported data, and return it. The
 function is also responsible for broadcasting the engine's pre/post asset
 import callbacks.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.cpp" %}
 {% highlight cpp linenos %}
 // ...
 #include "EditorFramework/AssetImportData.h"
@@ -332,7 +332,7 @@ The code itself is relatively straightforward, the body of `FactoryCreateText`
 just needs to be extracted to a separate function so that it can also be called
 from `Reimport`.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.h" %}
 {% highlight cpp linenos %}
 // ...
 #include "EditorReimportHandler.h"
@@ -350,7 +350,7 @@ First, extract the JSON parsing code to it's own function and make sure it can
 be run multiple times on the same object without causing an issues. In this
 case, the `Waves` array must be cleared.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.cpp" %}
 {% highlight cpp linenos %}
 // ...
 void ParseTargetPracticeRound(const TSharedPtr<FJsonObject>& InObject, UTargetPracticeRound* Result)
@@ -403,7 +403,7 @@ UObject* UTargetPracticeRoundImportFactory::FactoryCreateText(UClass* InClass, U
 Finally, we can implement the reimport handler with the same code used
 throughout the engine for an asset with a single import file path.
 
-<div class="code-caption">TargetPracticeRoundImportFactory.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Factories/TargetPracticeRoundImportFactory.cpp" %}
 {% highlight cpp linenos %}
 // ...
 #include "Misc/FileHelper.h"
@@ -471,7 +471,7 @@ file extension.
 Much like `UFactory`, exporting data from the engine is handled by making a
 subclass of `UExporter` and configuring settings in the constructor.
 
-<div class="code-caption">TargetPracticeRoundExporter.h</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Exporters/TargetPracticeRoundExporter.h" %}
 {% highlight cpp linenos %}
 #pragma once
 
@@ -492,7 +492,7 @@ public:
 };
 {% endhighlight %}
 
-<div class="code-caption">TargetPracticeRoundExporter.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Exporters/TargetPracticeRoundExporter.cpp" %}
 {% highlight cpp linenos %}
 #include "TargetPracticeRoundExporter.h"
 
@@ -513,7 +513,7 @@ base class as Unreal's logger so it only provides `Log` functions that take
 strings, so this exporter serializes the JSON values to a string, then sends
 that string to `FOutputDevice`.
 
-<div class="code-caption">TargetPracticeRoundExporter.cpp</div>
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/Exporters/TargetPracticeRoundExporter.cpp" %}
 {% highlight cpp linenos %}
 // ...
 #include "Serialization/JsonTypes.h"

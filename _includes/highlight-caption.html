@@ -1,0 +1,7 @@
+{% if include.wb != nil %}
+    {% capture new_wb %}{{ include.wb }}<wbr>{% endcapture %}
+    {% capture caption %}{{ include.caption | replace: include.wb, new_wb }}{% endcapture %}
+{% else %}
+    {% assign caption = include.caption %}
+{% endif %}
+<div class="highlight-caption">{{ caption }}</div>

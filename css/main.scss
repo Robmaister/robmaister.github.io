@@ -665,7 +665,9 @@ code {
     padding: 0;
 }
 
-.code-caption {
+.highlight-caption {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     font-family: monospace, monospace;
     font-size: 0.75em;
     padding: 0 0.5em;

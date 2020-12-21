@@ -17,7 +17,7 @@ green     #859900  operators, other keywords
 */
 
 code { background-color: #002b36; color: #93a1a1 }
-.code-caption { background-color: #002b36; color: #93a1a1; border-bottom: 1px solid #586e75}
+.highlight-caption { background-color: #002b36; color: #93a1a1; border-bottom: 1px solid #586e75}
 
 .highlight { background-color: #002b36; color: #93a1a1 }
 .highlight .lineno { color: #586e75 } /* Line Numbers */
