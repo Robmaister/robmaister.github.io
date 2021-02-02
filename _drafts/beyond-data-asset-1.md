@@ -62,7 +62,7 @@ struct FTargetWave
     TArray<FTarget> Targets;
 };
 
-UCLASS()
+UCLASS(BlueprintType)
 class UTargetPracticeRound : public UDataAsset
 {
     GENERATED_BODY()
@@ -80,7 +80,7 @@ public:
 As you can see this is technically editable, but asking a designer to make 50
 of these assets means you either have a very patient designer or a death wish.
 
-[![][1]][1]{: data-lightbox="img-1"}
+[![][img1]][img1]{: data-lightbox="img1"}
 
 This tends to be the case with any asset that involves 3d locations. It may be
 tempting to use Blueprints and a lot of components to create a reasonable
@@ -97,10 +97,14 @@ and code that is used to extend Unreal Editor.
 Another way to think about this is to consider all code in the editor module as
 auotmatically wrapped in a `WITH_EDITOR` check.
 
-This section is largely based on the [Creating Custom Modules][2] tutorial by
-Orfeas Eleftheriou. Epic Games has [their own explanation][3] of the pros and
-cons of separate gameplay modules. Editor modules, however, are quite common
-within the engine.
+Epic Games has [their own explanation][1] of the pros and cons of separate
+gameplay modules. Editor modules, however, are quite common within the engine.
+Editor code tends to only have one-way references into gameplay code and a large
+number module dependencies as well as classes needed for editor extensions.
+This makes modularizing editor code the right choice, which Epic mentions in
+their documentation.
+
+> This trade-off is the correct one for engine and editor code, but it is questionable for gameplay.
 
 ## New Module Folder
 
@@ -112,7 +116,7 @@ folder name for `BeyondDataAsset` would be `BeyondDataAssetEditor`.
 In this folder, create 3 new files with the same base name with the extensions
 `.Build.cs`, `.h`, and `.cpp`.
 
-[![][4]][4]{: data-lightbox="img-4"}
+[![][img2]][img2]{: data-lightbox="img2"}
 
 You can optionally create `Public` and `Private` folders here for the `.h` and
 `.cpp` files respectively, for simplicity I have excluded them in this guide.
@@ -253,15 +257,14 @@ At this point you can compile your project and two modules will show up. You
 can verify this in `Window > Developer Tools > Modules` or the Add C++ Class
 dialog.
 
-[![][5]][5]{: data-lightbox="img-5"}
+[![][img3]][img3]{: data-lightbox="img3"}
 
 # Making a Custom Asset Type
 
 The first step in this process is to copy the existing boilerplate that
 DataAsset would have provide provided for us. Once we have a copy specific to
 one asset class, there will be many opportunities to customize how the asset
-looks and functions in the editor. This section is also based on a tutorial by
-Orfeas, [Creating Custom Editor Assets][6].
+looks and functions in the editor.
 
 ## Class Setup
 
@@ -447,15 +450,13 @@ Double clicking the asset will open the same default editor as it did under
 asset type. Creating a new asset this way will run `FactoryCreateNew` on your
 factory class.
 
-[![][7]][7]{: data-lightbox="img-7"}
+[![][img4]][img4]{: data-lightbox="img4"}
 
 In part 2, we will explore importing and exporting instances of our asset from
 files on disk, before diving into a custom AssetEditor in parts 3 and 4.
 
-[1]: /img/unreal/BeyondDataAsset/DataAssetEditor.png "DataAsset Editor"
-[2]: https://www.orfeasel.com/creating-custom-modules/
-[3]: https://docs.unrealengine.com/en-US/ProgrammingAndScripting/GameplayArchitecture/Gameplay/index.html
-[4]: /img/unreal/BeyondDataAsset/EditorModuleFiles.png "New Editor Module Files"
-[5]: /img/unreal/BeyondDataAsset/EditorModuleNewClass.png "New C++ Class Dialog with Editor Module"
-[6]: https://www.orfeasel.com/creating-custom-editor-assets/
-[7]: /img/unreal/BeyondDataAsset/CustomAssetType.png "Customized Asset Color and Menu Entry"
+[1]: https://docs.unrealengine.com/en-US/ProgrammingAndScripting/GameplayArchitecture/Gameplay/index.html
+[img1]: /img/unreal/BeyondDataAsset/DataAssetEditor.png "DataAsset Editor"
+[img2]: /img/unreal/BeyondDataAsset/EditorModuleFiles.png "New Editor Module Files"
+[img3]: /img/unreal/BeyondDataAsset/EditorModuleNewClass.png "New C++ Class Dialog with Editor Module"
+[img4]: /img/unreal/BeyondDataAsset/CustomAssetType.png "Customized Asset Color and Menu Entry"

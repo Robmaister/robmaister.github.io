@@ -113,7 +113,7 @@ void FAssetTypeActions_TargetPracticeRound::GetResolvedSourceFilePaths(const TAr
 
 This will enable the "Imported Asset" actions in the asset context menu.
 
-[![][1]][1]{: data-lightbox="img-1"}
+[![][img1]][img1]{: data-lightbox="img1"}
 
 # File Format
 
@@ -300,18 +300,32 @@ UObject* UTargetPracticeRoundImportFactory::FactoryCreateText(UClass* InClass, U
 }
 {% endhighlight %}
 
+Finally, we need to add the Json module as a dependency for this new code to
+compile.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/BeyondDataAssetEditor.Build.cs" %}
+{% highlight csharp linenos %}
+// ...
+PublicDependencyModuleNames.AddRange(new string[]
+{
+    // ...
+    "Json"
+});
+// ...
+{% endhighlight %}
+
 With this factory, the above `ImportTest.targetpractice` file will import
 correctly. Note the source file path and timestamp at the very bottom, that is
 how the `UAssetImportData` property appears in the editor.
 
-[![][2]][2]{: data-lightbox="img-2"}
+[![][img2]][img2]{: data-lightbox="img2"}
 
 To keep things short and understandable, this sample factory does not do
 detailed error reporting or logging. Error reporting methods vary within the
 engine. The only built-in error handling is if `FactoryCreateText` returns
 `nullptr`.
 
-[![][3]][3]{: data-lightbox="img-3"}
+[![][img3]][img3]{: data-lightbox="img3"}
 
 ## Reimport Handling
 
@@ -320,13 +334,11 @@ of the file change and allow you to reimport the file. With an import factory
 alone this will do nothing. We must make our import factory also inherit from
 the `FReimportHandler` class.
 
-[![][4]][4]{: data-lightbox="img-4"}
+[![][img4]][img4]{: data-lightbox="img4"}
 
-Unreal has a number of settings that can be adjusted, including fully automated
-asset reimporting whenever a change is detected, as well as watching paths
-external to the project directory.
-
-[Auto Reimport \| Unreal Engine Documentation][5]
+Unreal has a [number of settings that can be adjusted][1], including fully
+automated asset reimporting whenever a change is detected, as well as watching
+paths external to the project directory.
 
 The code itself is relatively straightforward, the body of `FactoryCreateText`
 just needs to be extracted to a separate function so that it can also be called
@@ -587,16 +599,16 @@ bool UTargetPracticeRoundExporter::ExportText(const FExportObjectInnerContext* C
 With this exporter complete, any instance of our asset class can be exported to
 our JSON format whether or not it was imported.
 
-[![][6]][6]{: data-lightbox="img-6"}
+[![][img5]][img5]{: data-lightbox="img5"}
 
 -------------------------------------------------------------------------------
 
 In part 3, we will frame out a custom AssetEditor with a 3d viewport for a much
 better editing experience.
 
-[1]: /img/unreal/BeyondDataAsset/ImportContextMenu.png "Imported Asset Actions"
-[2]: /img/unreal/BeyondDataAsset/ImportedAsset.png "ImportTest.targetpractice"
-[3]: /img/unreal/BeyondDataAsset/ImportFail.png "Failed Import Dialog"
-[4]: /img/unreal/BeyondDataAsset/ReimportDialog.png
-[5]: https://docs.unrealengine.com/en-US/Basics/AssetsAndPackages/AutoReImport/index.html
-[6]: /img/unreal/BeyondDataAsset/ExportContextMenu.png "Export Asset Action"
+[1]: https://docs.unrealengine.com/en-US/Basics/AssetsAndPackages/AutoReImport/index.html
+[img1]: /img/unreal/BeyondDataAsset/ImportContextMenu.png "Imported Asset Actions"
+[img2]: /img/unreal/BeyondDataAsset/ImportedAsset.png "ImportTest.targetpractice"
+[img3]: /img/unreal/BeyondDataAsset/ImportFail.png "Failed Import Dialog"
+[img4]: /img/unreal/BeyondDataAsset/ReimportDialog.png
+[img5]: /img/unreal/BeyondDataAsset/ExportContextMenu.png "Export Asset Action"

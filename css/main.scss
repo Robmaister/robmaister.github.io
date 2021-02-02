@@ -532,9 +532,6 @@ table {
     table-layout: auto;
 }
 
-.data-table thead {
-}
-
 .data-table thead tr:last-child th {
     border-bottom: 1px solid #666;
 }
@@ -642,6 +639,18 @@ table {
 .instagram-media {
     /* Force instagram embed to be centered */
     margin: 0.5em auto !important;
+}
+
+blockquote {
+    margin-left: 10px;
+    border-left: 3px solid $accent-color-medium;
+    padding: 0.5em 0 0.5em 27px;
+}
+
+blockquote > p {
+    /* Let the blockquote add this space via padding */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 code {
