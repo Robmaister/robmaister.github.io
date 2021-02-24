@@ -23,7 +23,7 @@ own art and all. I decided to record the whole thing with hypercam as a
 timelapse. I successfully completed the project within 5 hours, and the
 timelapse is now available on YouTube:
 
-{% include embed/video.html url='http://www.youtube.com/embed/rriruW0S6oo' %}
+{% include embed/youtube.html id='rriruW0S6oo' %}
 
 I'm also open-sourcing the project under the zlib license, hopefully it will
 be useful to someone out there. Using Mono, this game can run on almost any

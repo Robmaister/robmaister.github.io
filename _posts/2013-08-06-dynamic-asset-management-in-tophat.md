@@ -17,4 +17,4 @@ explain the changes as I made them similar to how Wolfire makes their update
 videos for Overgrowth. I got a lot of positive feedback about it, so I'm
 probably going to continue this style of video for all future updates.
 
-{% include embed/video.html url='https://www.youtube.com/embed/Zb4UyoAdbWg' %}
+{% include embed/youtube.html id='https://www.youtube.com/embed/Zb4UyoAdbWg' %}

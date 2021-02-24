@@ -84,7 +84,7 @@ On the graphics side, about 6 months ago I did a lot of work abstracting
 rendering and finally wrote code that controls the directional light and lets
 you set multiple lights. Here's a video of that functionality:
 
-{% include embed/video.html url='http://www.youtube.com/embed/IQIbuOjuW98' %}
+{% include embed/youtube.html id='IQIbuOjuW98' %}
 
 Shortly after that, I did some benchmarking, as the game was a bit slow on my
 laptop, and found out we were vertex processor bound with the terrain alone.
@@ -101,7 +101,7 @@ quadtree level, using a static 33x33 grid would be a much cleaner solution if
 we have vertex texture fetch support. Here's a video of that algorithm in
 action:
 
-{% include embed/video.html url='http://www.youtube.com/embed/qWBhC_Mch9M' %}
+{% include embed/youtube.html id='qWBhC_Mch9M' %}
 
 Most of the work I did over break was networking and other backend stuff that
 doesn't have much to show off. There wasn't a whole lot of work on the game

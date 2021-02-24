@@ -737,8 +737,220 @@ to the StaticMesh editor.
 
 [![][img4]][img4]{: data-lightbox="img4"}
 
+# Viewport Content
+
+Finally, we will use our new viewport to render our targets and update when
+changes are made in the details panel.
+
+## Adding Components
+
+In general, all components rendered in the viewport are stored in the viewport
+class and referenced elsewhere. In our case, we will be loading a StaticMesh
+asset and rendering it on multiple components, one for each target. We will
+also add a function to initialize the preview components.
+
+The components are stored in nested arrays to organize them into the waves
+they are previewing.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.h" %}
+{% highlight cpp linenos %}
+class STargetPracticeRoundEditorViewport : public SAssetEditorViewport, public FGCObject
+{
+public:
+    // ...
+    void SetPreviewRound(UTargetPracticeRound* TargetPracticeRound);
+    // ...
+private:
+    // ...
+    UStaticMesh* PreviewMesh;
+	TArray<TArray<UStaticMeshComponent*>> PreviewComponents;
+};
+{% endhighlight %}
+
+Before we implement `SetPreviewRound`, make sure that our mesh and components
+are being tracked by the GC.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+void STargetPracticeRoundEditorViewport::AddReferencedObjects(FReferenceCollector& Collector)
+{
+    // ...
+    Collector.AddReferencedObject(PreviewMesh);
+
+    for (auto& WaveComponents : PreviewComponents)
+	{
+		Collector.AddReferencedObjects(WaveComponents);
+	}
+}
+{% endhighlight %}
+
+Next, we load the mesh and create the components:
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+STargetPracticeRoundEditorViewport::STargetPracticeRoundEditorViewport()
+    // ...
+{
+    PreviewMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Game/TargetPractice/SM_Target.SM_Target"));
+}
+{% endhighlight %}
+
+Note that for simplicity the asset path for this mesh is directly referenced
+in code. This can be avoided by creating a new `UDeveloperSettings` subclass
+and adding the mesh as a `UPROPERTY` which will push the asset path into an
+ini file which can be updated without rebuilding code.
+
+Next, we will implement `SetPreviewRound`. All preview components are
+initialized at the same time, in the next part we will explore hiding
+components to only view targets for a single wave. 
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+#include "TargetPracticeRound.h"
+
+// ...
+
+void STargetPracticeRoundEditorViewport::SetPreviewRound(UTargetPracticeRound* TargetPracticeRound)
+{
+    for (auto& WaveComponents : PreviewComponents)
+	{
+		for (auto& Component : WaveComponents)
+		{
+			PreviewScene->RemoveComponent(Component);
+		}
+	}
+
+	PreviewComponents.Reset();
+
+	if (InTargetPracticeRound == nullptr)
+	{
+		return;
+	}
+
+	int32 NumWaves = InTargetPracticeRound->Waves.Num();
+	PreviewComponents.AddDefaulted(NumWaves);
+
+	for (int32 WaveIndex = 0; WaveIndex < NumWaves; WaveIndex++)
+	{
+		const FTargetWave& Wave = InTargetPracticeRound->Waves[WaveIndex];
+		TArray<UStaticMeshComponent*>& WaveComponents = PreviewComponents[WaveIndex];
+
+		WaveComponents.Reserve(Wave.Targets.Num());
+		for (const auto& Target : Wave.Targets)
+		{
+			UStaticMeshComponent* Component = NewObject<UStaticMeshComponent>();
+            Component->SetStaticMesh(PreviewMesh);
+			Component->SetCustomPrimitiveDataVector4(0, FVector4(Target.Color));
+
+			PreviewScene->AddComponent(Component, Target.Transform);
+
+			WaveComponents.Add(Component);
+		}
+	}
+}
+{% endhighlight %}
+
+Note that the material for this mesh is set up to receive color via
+[Custom Primitive Data][2]. Systems that assign textures or projects on older
+engine versions would have to create and track a `UMaterialInstanceDynamic` per
+component. The material is available in the Github repository for this
+tutorial.
+
+Finally, we can invoke `SetPreviewRound` at the very end of `Construct` to initialize it when the editor opens.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+void STargetPracticeRoundEditorViewport::Construct(const FArguments& InArgs)
+{
+    // ...
+
+    SetPreviewRound(TargetPracticeRound);
+}
+{% endhighlight %}
+
+The viewport is now populated with targets. The camera is still placed at the
+origin, and the components do not update when edited via the Details panel or
+when the asset is reimported. There is also no way to interact with the
+viewport besides manipulating the camera.
+
+[![][img5]][img5]{: data-lightbox="img5"}
+
+## Update Viewport on Asset Change
+
+Next up is to write some code that updates the components in the viewport as
+the user edits properties in the Details panel. While it would be possible to
+simply remove the Details panel and rely entirely on viewport interactions and
+custom tabs to change data, I believe it is still a good idea to keep the
+details panel around for debugging and validation, even if it's hidden by
+default.
+
+Normally, we would override `PostEditChangeProperty` on the object itself to
+run some code when a property is changed in the editor. But because we are
+trying to examine changes to our object externally (in the viewport), we must
+bind to the global property changed delegate and filter for our object.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.h" %}
+{% highlight cpp linenos %}
+class STargetPracticeRoundEditorViewport : public SAssetEditorViewport, public FGCObject
+{
+// ...
+private:
+    // ...
+    void OnObjectPropertyChanged(UObject* ObjectBeingModified, FPropertyChangedEvent& PropertyChangedEvent);
+};
+{% endhighlight %}
+
+The delegate is bound in `Construct()` and unbound in the destructor.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+void STargetPracticeRoundEditorViewport::Construct(const FArguments& InArgs)
+{
+    // ...
+
+    FCoreUObjectDelegates::OnObjectPropertyChanged.AddSP(this, &STargetPracticeRoundEditorViewport::OnObjectPropertyChanged);
+}
+
+STargetPracticeRoundEditorViewport::~STargetPracticeRoundEditorViewport()
+{
+    FCoreUObjectDelegates::OnObjectPropertyChanged.RemoveAll(this);
+
+    // ...
+}
+{% endhighlight %}
+
+Then we implement `OnObjectPropertyChanged`. The data provided to this
+function is not enough to figure out which target was edited specifically. We
+could try to update all components in-place when we detect that the `Color` or
+`Transform` of a target has been edited, but the added complexity is not worth
+it for the small number of components we would be allocating here. This will
+also handle undo/redo.
+
+{% include highlight-caption.html wb="/" caption="/Source/BeyondDataAssetEditor/AssetEditors/STargetPracticeRoundEditorViewport.cpp" %}
+{% highlight cpp linenos %}
+void STargetPracticeRoundEditorViewport::OnObjectPropertyChanged(UObject* ObjectBeingModified, FPropertyChangedEvent& PropertyChangedEvent)
+{
+	if (ObjectBeingModified == TargetPracticeRound)
+	{
+		SetPreviewRound(TargetPracticeRound);
+	}
+}
+{% endhighlight %}
+
+Now we have a viewport that stays synchronized with asset data, which is
+already an improvement over the standard DataAsset editor.
+
+{% include video.html src="/img/unreal/BeyondDataAsset/DetailsPanelViewport.webm" %}
+
+-------------------------------------------------------------------------------
+
+In part 4, we will look at adding interactions to the viewport, extending the
+toolbar, and adding custom Slate widgets as tabs.
+
 [1]: https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Slate/Overview/index.html
+[2]: https://docs.unrealengine.com/en-US/RenderingAndGraphics/Materials/CustomPrimitiveData/index.html
 [img1]: /img/unreal/BeyondDataAsset/BlankAssetEditor.png "Blank AssetEditor"
 [img2]: /img/unreal/BeyondDataAsset/AssetEditorWithToolbar.png "Standard Toolbar"
 [img3]: /img/unreal/BeyondDataAsset/AssetEditorWithDetails.png "Details View"
 [img4]: /img/unreal/BeyondDataAsset/AssetEditorWithViewport.png "Viewport"
+[img5]: /img/unreal/BeyondDataAsset/PreviewComponents.png "Preview Components"

@@ -14,4 +14,4 @@ preview-img:
 Here's a level editor I've made in a week or two, full game released on March
 30th.
 
-{% include embed/video.html url='http://www.youtube.com/embed/Y6btr2G9OiI' %}
+{% include embed/youtube.html id='Y6btr2G9OiI' %}

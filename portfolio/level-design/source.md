@@ -5,8 +5,8 @@ title: Source Engine
 bg: jp_diner_port0037.jpg
 ---
 
-{% capture jp_diner_yt_embed %}{% include embed/video.html url='https://www.youtube.com/embed/WWyz-17oGZU' %}{% endcapture %}
-{% capture map_challenge_yt_embed %}{% include embed/video.html url='https://www.youtube.com/embed/xqjY0vVlU9k' %}{% endcapture %}
+{% capture jp_diner_yt_embed %}{% include embed/youtube.html id='https://www.youtube.com/embed/WWyz-17oGZU' %}{% endcapture %}
+{% capture map_challenge_yt_embed %}{% include embed/youtube.html id='https://www.youtube.com/embed/xqjY0vVlU9k' %}{% endcapture %}
 
 These screenshots are all what I'm able to find online currently. A lot of my
 screenshots posted online have "expired" by the host, expect fresh screenshots

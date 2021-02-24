@@ -658,10 +658,6 @@ code {
     border-radius: 0.2em;
 }
 
-.highlight .code {
-    overflow-x: auto; /* Adds a horizontal scrollbar if needed */
-}
-
 .highlight table {
     border-spacing: 0;
 }
@@ -693,8 +689,12 @@ code {
     vertical-align: baseline;
 }
 
+.code {
+    padding: 0;
+}
+
 .code pre {
-    margin-left: 0.25em;
+    overflow-x: auto; /* Adds a horizontal scrollbar if needed */
 }
 
 #disqus_thread {

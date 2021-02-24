@@ -84,7 +84,7 @@ into the matrix. It did. The matrix is simply the inverse view matrix
 multiplied by the light's crop/projection matrix multiplied by a "bias"
 matrix that scales the point into [0; 1] range for easier texture lookup.
 
-{% include embed/video.html url='http://www.youtube.com/embed/1utakCjC7Xc' %}
+{% include embed/youtube.html id='1utakCjC7Xc' %}
 
 # Remaining bugs
 

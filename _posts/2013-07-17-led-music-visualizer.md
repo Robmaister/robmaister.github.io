@@ -20,7 +20,7 @@ project "done".
 
 ------------------------------------------------------------------------------
 
-{% include embed/video.html url='http://www.youtube.com/embed/FjP1wSDdw-c' %}
+{% include embed/youtube.html id='FjP1wSDdw-c' %}
 
 As the video shows, the visualizer doesn't require much hardware knowledge. So
 long as you have the equipment to do some soldering (or at least a friend who

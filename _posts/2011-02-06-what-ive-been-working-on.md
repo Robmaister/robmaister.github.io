@@ -16,8 +16,8 @@ first video, so here's both of them in a single post.
 
 The first video:
 
-{% include embed/video.html url='http://www.youtube.com/embed/EtcmfnoG8g8' %}
+{% include embed/youtube.html id='EtcmfnoG8g8' %}
 
 The second video:
 
-{% include embed/video.html url='http://www.youtube.com/embed/Wnxy3xpt618' %}
+{% include embed/youtube.html id='Wnxy3xpt618' %}
